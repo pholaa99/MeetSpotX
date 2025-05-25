@@ -9,7 +9,7 @@
 ## 🔍 项目展示
 
 <p align="center">
-  <a href="docs/videos/bandicam 2025-05-25 12-07-09-174.mp4">
+  <a href="https://www.bilibili.com/video/BV1d1jMzrEUk/?vd_source=ac00554d8e1f118822ccd0405e3f6f15">
     <strong>📹 点击查看项目演示视频</strong>
   </a>
 </p>
