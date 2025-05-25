@@ -18,8 +18,6 @@
   <em>项目演示 - 多地点会面场所智能推荐过程</em>
 </p>
 
-> 注意：GitHub不支持直接播放视频，请下载后在本地观看，或克隆仓库后查看。
-
 <p align="center">
   <img src="docs/images/show1.png" alt="MeetSpot展示1" width="600">
 </p>
