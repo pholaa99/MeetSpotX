@@ -1,0 +1,2 @@
+2025-05-24 17:43:28.270 | ERROR    | app.tool.cafe_recommender:_geocode:154 - 地理编码失败: {'status': '0', 'info': 'INVALID_USER_KEY', 'infocode': '10001'}
+2025-05-24 17:43:34.954 | ERROR    | app.tool.cafe_recommender:_geocode:154 - 地理编码失败: {'status': '0', 'info': 'INVALID_USER_KEY', 'infocode': '10001'}

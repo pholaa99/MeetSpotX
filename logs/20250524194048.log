@@ -1,0 +1,60 @@
+2025-05-24 19:41:31.448 | INFO     | app.tool.meetspot_recommender:execute:60 - 开始处理会面点推荐，地点数量: 2
+2025-05-24 19:41:31.448 | DEBUG    | app.tool.meetspot_recommender:execute:66 - 正在地理编码地点: 北京信息科技大学
+2025-05-24 19:41:31.523 | DEBUG    | app.tool.meetspot_recommender:execute:66 - 正在地理编码地点: 北京朝阳区望京宝星园
+2025-05-24 19:41:31.582 | INFO     | app.tool.meetspot_recommender:execute:87 - 中心点计算完成: (116.475515, 39.960799)
+2025-05-24 19:41:31.582 | INFO     | app.tool.meetspot_recommender:_search_pois:174 - 搜索会面点: 关键词='餐厅', 位置='116.4755145,39.960798999999994', 半径=2000m
+2025-05-24 19:41:31.770 | INFO     | app.tool.meetspot_recommender:_search_pois:215 - 高德地图POI搜索成功: 找到20个结果
+2025-05-24 19:41:31.771 | INFO     | app.tool.meetspot_recommender:execute:99 - 找到20个符合条件的会面点
+2025-05-24 19:41:31.772 | INFO     | app.tool.meetspot_recommender:_rank_places:260 - 分析用户需求: ''
+2025-05-24 19:41:31.772 | INFO     | app.tool.meetspot_recommender:_rank_places:268 - 未检测到特定需求，使用默认评分系统
+2025-05-24 19:41:31.772 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.772 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.773 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.773 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.773 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.773 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.773 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.773 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.774 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.774 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.774 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:31.774 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 1: 北京福楼法餐厅(三元桥店) (评分: 68.9, 距离: 539m, 匹配需求: )
+2025-05-24 19:41:31.774 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 2: 霄云苑 (评分: 68.6, 距离: 496m, 匹配需求: )
+2025-05-24 19:41:31.775 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 3: Ponte意大利餐厅 (评分: 66.1, 距离: 792m, 匹配需求: )
+2025-05-24 19:41:31.775 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 4: 蘇锦宴·淮扬菜·烤鸭(三元桥霄云路店) (评分: 64.7, 距离: 889m, 匹配需求: )
+2025-05-24 19:41:31.775 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 5: 平壤民达来餐厅·朝鲜传统烤肉 (评分: 63.9, 距离: 871m, 匹配需求: )
+2025-05-24 19:41:31.775 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 6: 慢走餐厅(亮马桥店) (评分: 62.1, 距离: 927m, 匹配需求: )
+2025-05-24 19:41:31.775 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 7: 云餐厅私宴(网信大厦B座店) (评分: 61.7, 距离: 889m, 匹配需求: )
+2025-05-24 19:41:31.775 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 8: 我的餐厅·蒸汽石锅鱼(中国庆安大厦店) (评分: 60.9, 距离: 942m, 匹配需求: )
+2025-05-24 19:41:31.776 | INFO     | app.tool.meetspot_recommender:execute:102 - 已对20个会面点进行排序，推荐前8个
+2025-05-24 19:41:31.778 | INFO     | app.tool.meetspot_recommender:execute:110 - 生成HTML页面成功: meetspot_recommendations_53ee1605.html
+2025-05-24 19:41:33.469 | INFO     | app.tool.meetspot_recommender:execute:60 - 开始处理会面点推荐，地点数量: 2
+2025-05-24 19:41:33.469 | DEBUG    | app.tool.meetspot_recommender:execute:66 - 正在地理编码地点: 北京信息科技大学
+2025-05-24 19:41:33.528 | DEBUG    | app.tool.meetspot_recommender:execute:66 - 正在地理编码地点: 北京朝阳区望京宝星园
+2025-05-24 19:41:33.589 | INFO     | app.tool.meetspot_recommender:execute:87 - 中心点计算完成: (116.475515, 39.960799)
+2025-05-24 19:41:33.589 | INFO     | app.tool.meetspot_recommender:_search_pois:174 - 搜索会面点: 关键词='餐厅', 位置='116.4755145,39.960798999999994', 半径=2000m
+2025-05-24 19:41:33.789 | INFO     | app.tool.meetspot_recommender:_search_pois:215 - 高德地图POI搜索成功: 找到20个结果
+2025-05-24 19:41:33.790 | INFO     | app.tool.meetspot_recommender:execute:99 - 找到20个符合条件的会面点
+2025-05-24 19:41:33.790 | INFO     | app.tool.meetspot_recommender:_rank_places:260 - 分析用户需求: ''
+2025-05-24 19:41:33.790 | INFO     | app.tool.meetspot_recommender:_rank_places:268 - 未检测到特定需求，使用默认评分系统
+2025-05-24 19:41:33.790 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.790 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.790 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.791 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.791 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.791 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.791 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.792 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.792 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.792 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.792 | ERROR    | app.tool.meetspot_recommender:_rank_places:351 - 计算会面点评分时出错: 'list' object has no attribute 'lower'
+2025-05-24 19:41:33.793 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 1: 北京福楼法餐厅(三元桥店) (评分: 68.9, 距离: 539m, 匹配需求: )
+2025-05-24 19:41:33.793 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 2: 霄云苑 (评分: 68.6, 距离: 496m, 匹配需求: )
+2025-05-24 19:41:33.793 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 3: Ponte意大利餐厅 (评分: 66.1, 距离: 792m, 匹配需求: )
+2025-05-24 19:41:33.793 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 4: 蘇锦宴·淮扬菜·烤鸭(三元桥霄云路店) (评分: 64.7, 距离: 889m, 匹配需求: )
+2025-05-24 19:41:33.793 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 5: 平壤民达来餐厅·朝鲜传统烤肉 (评分: 63.9, 距离: 871m, 匹配需求: )
+2025-05-24 19:41:33.793 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 6: 慢走餐厅(亮马桥店) (评分: 62.1, 距离: 927m, 匹配需求: )
+2025-05-24 19:41:33.794 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 7: 云餐厅私宴(网信大厦B座店) (评分: 61.7, 距离: 889m, 匹配需求: )
+2025-05-24 19:41:33.794 | INFO     | app.tool.meetspot_recommender:_rank_places:362 - Top 8: 我的餐厅·蒸汽石锅鱼(中国庆安大厦店) (评分: 60.9, 距离: 942m, 匹配需求: )
+2025-05-24 19:41:33.794 | INFO     | app.tool.meetspot_recommender:execute:102 - 已对20个会面点进行排序，推荐前8个
+2025-05-24 19:41:33.797 | INFO     | app.tool.meetspot_recommender:execute:110 - 生成HTML页面成功: meetspot_recommendations_f5a92ef1.html
