@@ -8,11 +8,7 @@
 
 ## 🔍 项目展示
 
-<p align="center">
-  <a href="docs/videos/bandicam 2025-05-25 12-07-09-174.mp4">
-    <strong>📹 点击查看项目演示视频</strong>
-  </a>
-</p>
+
 
 <p align="center">
   <em>项目演示 - 多地点会面场所智能推荐过程</em>
