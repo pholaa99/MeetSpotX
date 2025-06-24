@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meetspot"
+version = "1.0.0"
+description = "Intelligent Meeting Point Recommendation System - Find the Perfect Place for Every Gathering"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "MeetSpot Team", email = "Johnrobertdestiny@gmail.com"}
+]
+keywords = ["meetspot", "recommendation", "gis", "fastapi", "amap"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn>=0.34.0",
+    "pydantic>=2.10.0",
+    "aiohttp>=3.9.0",
+    "aiofiles>=24.1.0",
+    "toml>=0.10.2",
+    "loguru>=0.7.3",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.25.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/MeetSpot"
+Documentation = "https://github.com/YOUR_USERNAME/MeetSpot#readme"
+Repository = "https://github.com/YOUR_USERNAME/MeetSpot.git"
+"Bug Tracker" = "https://github.com/YOUR_USERNAME/MeetSpot/issues"
+
+[project.scripts]
+meetspot = "web_server:main"
+
+[tool.setuptools]
+packages = ["app"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+"*" = ["*.html", "*.css", "*.js", "*.toml", "*.md"]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+asyncio_mode = "auto"

@@ -164,6 +164,21 @@ class CafeRecommender(BaseTool):
             "theme_light": "#fef9e7",
             "theme_dark": "#4a2303",
         },
+        "健身房": {
+            "topic": "健身汇",
+            "icon_header": "bx-dumbbell",
+            "icon_section": "bx-dumbbell",
+            "icon_card": "bx-dumbbell",
+            "map_legend": "健身房",
+            "noun_singular": "健身房",
+            "noun_plural": "健身房",
+            "theme_primary": "#e67e22", # 活力橙色系
+            "theme_primary_light": "#f39c12",
+            "theme_primary_dark": "#d35400",
+            "theme_secondary": "#fdebd0",
+            "theme_light": "#fef9e7",
+            "theme_dark": "#4a2c03",
+        },
         "default": { # 默认主题颜色 (同咖啡馆)
             "topic": "会面点",
             "icon_header": "bxs-map-pin",
@@ -221,12 +236,49 @@ class CafeRecommender(BaseTool):
 
             center_point = self._calculate_center_point(coordinates)
             
-            searched_places = await self._search_pois(
-                f"{center_point[0]},{center_point[1]}",
-                keywords, 
-                radius=5000,
-                types=place_type 
-            )
+            # 处理多个关键词的搜索
+            keywords_list = [kw.strip() for kw in keywords.split() if kw.strip()]
+            primary_keyword = keywords_list[0] if keywords_list else "咖啡馆"
+            
+            searched_places = []
+            
+            # 如果有多个关键词，分别搜索并合并结果
+            if len(keywords_list) > 1:
+                logger.info(f"多场景搜索: {keywords_list}")
+                all_places = []
+                
+                for keyword in keywords_list:
+                    logger.info(f"搜索场景: '{keyword}'")
+                    places = await self._search_pois(
+                        f"{center_point[0]},{center_point[1]}",
+                        keyword,
+                        radius=5000,
+                        types=""
+                    )
+                    if places:
+                        # 为每个场所添加来源标记
+                        for place in places:
+                            place['_source_keyword'] = keyword
+                        all_places.extend(places)
+                        logger.info(f"'{keyword}' 找到 {len(places)} 个结果")
+                
+                # 去重（基于场所名称和地址）
+                seen = set()
+                for place in all_places:
+                    identifier = f"{place.get('name', '')}_{place.get('address', '')}"
+                    if identifier not in seen:
+                        seen.add(identifier)
+                        searched_places.append(place)
+                
+                logger.info(f"多场景搜索完成，去重后共 {len(searched_places)} 个结果")
+            else:
+                # 单个关键词的传统搜索
+                searched_places = await self._search_pois(
+                    f"{center_point[0]},{center_point[1]}",
+                    keywords, 
+                    radius=5000,
+                    types=place_type 
+                )
 
             if not searched_places:
                 logger.info(f"使用 keywords '{keywords}' 和 types '{place_type}' 未找到结果，尝试仅使用 keywords 进行搜索。")
@@ -349,6 +401,12 @@ class CafeRecommender(BaseTool):
             distance = self._calculate_distance(center_point, (place_lng, place_lat))
             distance_score = max(0, 20 * (1 - (distance / 2000))) 
             score += distance_score
+
+            # 多场景匹配奖励 - 如果场所来源匹配用户选择的关键词，给予额外分数
+            source_keyword = place.get('_source_keyword', '')
+            if source_keyword and source_keyword in keywords:
+                score += 15  # 匹配用户选择场景的奖励分数
+                logger.debug(f"场所 {place.get('name')} 匹配场景 '{source_keyword}'，获得奖励分数")
 
             for priority in user_priorities:
                 if priority == "停车" and ("停车" in place.get("tag", "") or "免费停车" in place.get("parking_type", "")): 
