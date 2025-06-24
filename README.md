@@ -11,6 +11,12 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-green.svg)](https://fastapi.tiangolo.com/)
 [![Build Status](https://github.com/JasonRobertDestiny/MeetSpot/workflows/CI%20Tests/badge.svg)](https://github.com/JasonRobertDestiny/MeetSpot/actions)
 
+<p align="center">
+  <a href="https://www.bilibili.com/video/BV1d1jMzrEUk/?vd_source=ac00554d8e1f118822ccd0405e3f6f15">
+    <strong>📹 点击查看项目演示视频</strong>
+  </a>
+</p>
+
 [English](README_EN.md) | 简体中文
 
 </div>
