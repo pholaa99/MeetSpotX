@@ -4,7 +4,7 @@
 
 <div align="center">
 
-<img src="docs/logo.png" alt="MeetSpot Logo" width="200"/>
+<img src="docs/logo.png" alt="MeetSpot Logo" width="600"/>
 
 
  MeetSpot (聚点) 是一个智能的会面地点推荐agent，旨在帮助用户根据多个参与者的位置和特定需求，快速找到最合适的会面场所。无论是寻找安静的咖啡馆进行商务会谈，还是热闹的餐厅朋友聚餐，或是适合学习的图书馆，聚点都能为您提供智能化的推荐。
@@ -14,7 +14,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-green.svg)](https://fastapi.tiangolo.com/)
-[![Build Status](https://github.com/JasonRobertDestiny/MeetSpot/workflows/CI%20Tests/badge.svg)](https://github.com/JasonRobertDestiny/MeetSpot/actions)
+
 
 <p align="center">
   <a href="https://www.bilibili.com/video/BV1d1jMzrEUk/?vd_source=ac00554d8e1f118822ccd0405e3f6f15">
