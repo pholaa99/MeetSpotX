@@ -1,0 +1,2 @@
+2025-05-25 17:29:03.929 | ERROR    | app.tool.meetspot_recommender:_geocode:270 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 北京大学
+2025-05-25 17:29:29.031 | ERROR    | app.tool.meetspot_recommender:_geocode:270 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 清华大学

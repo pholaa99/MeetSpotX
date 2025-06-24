@@ -1,0 +1,177 @@
+2025-06-24 22:49:10.769 | INFO     | __main__:performance_middleware:72 - 处理请求 #1: GET http://127.0.0.1:8000/
+2025-06-24 22:49:10.770 | INFO     | __main__:performance_middleware:91 - 请求 #1 完成，耗时: 0.001秒
+2025-06-24 22:49:10.813 | INFO     | __main__:performance_middleware:72 - 处理请求 #2: GET http://127.0.0.1:8000/workspace/meetspot_finder.html
+2025-06-24 22:49:10.878 | INFO     | __main__:performance_middleware:91 - 请求 #2 完成，耗时: 0.065秒
+2025-06-24 22:49:29.534 | INFO     | __main__:performance_middleware:72 - 处理请求 #3: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:49:29.536 | INFO     | __main__:find_meetspot:314 - [req_1750776569536] API请求开始: locations=['北京大学', '清华大学'], keywords=咖啡馆 公园
+2025-06-24 22:49:52.021 | INFO     | app.tool.meetspot_recommender:execute:232 - 多场景搜索: ['咖啡馆', '公园']
+2025-06-24 22:49:52.021 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: '咖啡馆'
+2025-06-24 22:49:52.210 | INFO     | app.tool.meetspot_recommender:execute:248 - '咖啡馆' 找到 20 个结果
+2025-06-24 22:49:52.210 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: '公园'
+2025-06-24 22:49:52.329 | INFO     | app.tool.meetspot_recommender:execute:248 - '公园' 找到 8 个结果
+2025-06-24 22:49:52.329 | INFO     | app.tool.meetspot_recommender:execute:258 - 多场景搜索完成，去重后共 28 个结果
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 安家小厨(北京大学燕东园店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 草图咖啡 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 nowwa挪瓦咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 梦旅人咖啡馆快餐(成府路北河沿小区店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(北京大学医学部店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 柏拉图咖啡馆(蓝旗营小区店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 拾年咖啡(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 双风车咖啡(五道口店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 天投咖啡(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星巴克(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(清华科技园创业大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 蒙楼咖啡(新清店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星巴克咖啡(北京清华大学图书馆店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.330 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 Hi Coffee(科建大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清青咖啡 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清华大学1911咖啡(生物医学馆馆店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 小咖咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 小咖咖啡(五道口创新大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 3W咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清华大学绿园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 圆明园遗址公园游客服务中心 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 西水磨公园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京大学朗润园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 圆明园遗址公园-码头 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中海体育公园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 京张铁路遗址公园一期a段 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.331 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 畅春公园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:49:52.334 | INFO     | __main__:find_meetspot:371 - [req_1750776569536] API请求完成，耗时: 22.80秒
+2025-06-24 22:49:52.334 | INFO     | __main__:performance_middleware:91 - 请求 #3 完成，耗时: 22.800秒
+2025-06-24 22:49:52.393 | INFO     | __main__:performance_middleware:72 - 处理请求 #4: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250624224952_33fe088c.html
+2025-06-24 22:49:52.395 | INFO     | __main__:performance_middleware:91 - 请求 #4 完成，耗时: 0.002秒
+2025-06-24 22:50:10.048 | INFO     | __main__:performance_middleware:72 - 处理请求 #5: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:50:10.049 | INFO     | __main__:find_meetspot:314 - [req_1750776610049] API请求开始: locations=['北京大学', '清华大学'], keywords=咖啡馆 公园 KTV
+2025-06-24 22:50:10.144 | INFO     | app.tool.meetspot_recommender:execute:232 - 多场景搜索: ['咖啡馆', '公园', 'KTV']
+2025-06-24 22:50:10.145 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: '咖啡馆'
+2025-06-24 22:50:10.322 | INFO     | app.tool.meetspot_recommender:execute:248 - '咖啡馆' 找到 20 个结果
+2025-06-24 22:50:10.322 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: '公园'
+2025-06-24 22:50:10.452 | INFO     | app.tool.meetspot_recommender:execute:248 - '公园' 找到 8 个结果
+2025-06-24 22:50:10.452 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: 'KTV'
+2025-06-24 22:50:10.567 | INFO     | app.tool.meetspot_recommender:execute:248 - 'KTV' 找到 20 个结果
+2025-06-24 22:50:10.567 | INFO     | app.tool.meetspot_recommender:execute:258 - 多场景搜索完成，去重后共 48 个结果
+2025-06-24 22:50:10.567 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 安家小厨(北京大学燕东园店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.567 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 草图咖啡 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.567 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 nowwa挪瓦咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.567 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 梦旅人咖啡馆快餐(成府路北河沿小区店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.567 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(北京大学医学部店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.567 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 柏拉图咖啡馆(蓝旗营小区店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 拾年咖啡(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 双风车咖啡(五道口店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 天投咖啡(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星巴克(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(清华科技园创业大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 蒙楼咖啡(新清店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星巴克咖啡(北京清华大学图书馆店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 Hi Coffee(科建大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清青咖啡 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清华大学1911咖啡(生物医学馆馆店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 小咖咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 小咖咖啡(五道口创新大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 3W咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清华大学绿园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 圆明园遗址公园游客服务中心 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 西水磨公园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京大学朗润园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 圆明园遗址公园-码头 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中海体育公园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 京张铁路遗址公园一期a段 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 畅春公园 匹配场景 '公园'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 赛乐堡量贩KTV(五道口店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 来音客KTV 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.568 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 唱吧麦颂KTV(五道口店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 酷秀KTV(中关村店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 酷秀KTV(五道口店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 友唱全民K歌(领展购物广场·中关村店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星聚会ktv(中关村领展店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 华丽会娱乐 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 桃屋量贩KTV 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 聚宝轰趴馆·KTV棋牌·团建聚会(中关村店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 相遇轰趴·桌游·团建·KTV 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 唱吧麦颂KTV(汉华世纪大厦店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 唱吧麦颂KTV(上地华联店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 唱吧麦颂KTV(北京万柳华联店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 酷秀KTV(万柳店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 上地之城公馆 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 魅KTV(上地店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 唱吧麦颂KTV(四通桥店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 今夜港 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.569 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 M-ONE KTV(清河万象汇店) 匹配场景 'KTV'，获得奖励分数
+2025-06-24 22:50:10.572 | INFO     | __main__:find_meetspot:371 - [req_1750776610049] API请求完成，耗时: 0.52秒
+2025-06-24 22:50:10.572 | INFO     | __main__:performance_middleware:91 - 请求 #5 完成，耗时: 0.525秒
+2025-06-24 22:50:10.625 | INFO     | __main__:performance_middleware:72 - 处理请求 #6: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250624225010_3f074646.html
+2025-06-24 22:50:10.628 | INFO     | __main__:performance_middleware:91 - 请求 #6 完成，耗时: 0.003秒
+2025-06-24 22:50:25.679 | INFO     | __main__:performance_middleware:72 - 处理请求 #7: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:50:25.681 | INFO     | __main__:find_meetspot:314 - [req_1750776625681] API请求开始: locations=['北京大学', '清华大学'], keywords=咖啡馆 电影院 博物馆
+2025-06-24 22:50:25.823 | INFO     | app.tool.meetspot_recommender:execute:232 - 多场景搜索: ['咖啡馆', '电影院', '博物馆']
+2025-06-24 22:50:25.823 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: '咖啡馆'
+2025-06-24 22:50:26.011 | INFO     | app.tool.meetspot_recommender:execute:248 - '咖啡馆' 找到 20 个结果
+2025-06-24 22:50:26.011 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: '电影院'
+2025-06-24 22:50:26.152 | INFO     | app.tool.meetspot_recommender:execute:248 - '电影院' 找到 20 个结果
+2025-06-24 22:50:26.152 | INFO     | app.tool.meetspot_recommender:execute:236 - 搜索场景: '博物馆'
+2025-06-24 22:50:26.294 | INFO     | app.tool.meetspot_recommender:execute:248 - '博物馆' 找到 17 个结果
+2025-06-24 22:50:26.294 | INFO     | app.tool.meetspot_recommender:execute:258 - 多场景搜索完成，去重后共 57 个结果
+2025-06-24 22:50:26.294 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 安家小厨(北京大学燕东园店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 草图咖啡 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 nowwa挪瓦咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 梦旅人咖啡馆快餐(成府路北河沿小区店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(北京大学医学部店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 柏拉图咖啡馆(蓝旗营小区店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 拾年咖啡(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 双风车咖啡(五道口店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 天投咖啡(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星巴克(清华大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 瑞幸咖啡(清华科技园创业大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 蒙楼咖啡(新清店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星巴克咖啡(北京清华大学图书馆店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 Hi Coffee(科建大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清青咖啡 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清华大学1911咖啡(生物医学馆馆店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 小咖咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 小咖咖啡(五道口创新大厦店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 3W咖啡(北京大学店) 匹配场景 '咖啡馆'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 太平洋影城(中关村店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 完美世界影城(五道口购物中心) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 金逸国际影城(中关村店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 嘉华国际影城(学清路店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 华联院线(上地店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.295 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 橙天嘉禾影城(万柳店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 华联影城(万柳北京华联BHG Mall店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 海淀工人文化宫影剧院 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 电影院(华宇时尚购物中心店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中影华宇国际影城 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 CGV影城(北京清河万象汇店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星聚汇 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 电影园 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 华联影城 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 BHG影院 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 星典影城(魏公村芳华里店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 百誉朗克影城(林萃路店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 完美世界影城(京果商厦店) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 华夏电影 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京五道口工人俱乐部电影院(暂停营业) 匹配场景 '电影院'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清华大学科学博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京大学赛克勒考古与艺术博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 清华大学艺术博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中国化工博物馆一期 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京林业大学博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 京张清华园博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中国民族博物馆(不对外开放) 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中国地质大学(北京)博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中国人民大学中关村校区博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.296 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京航空航天大学学院路校区航空航天博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.297 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 颐和园博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.297 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 大钟寺古钟博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.297 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京大学学院路校区病理学博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.297 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中国电信博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.297 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中国农业大学昆虫博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.297 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 中国农业大学西校区饲料博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.297 | DEBUG    | app.tool.meetspot_recommender:_rank_places:394 - 场所 北京外国语大学世界语言博物馆 匹配场景 '博物馆'，获得奖励分数
+2025-06-24 22:50:26.300 | INFO     | __main__:find_meetspot:371 - [req_1750776625681] API请求完成，耗时: 0.62秒
+2025-06-24 22:50:26.301 | INFO     | __main__:performance_middleware:91 - 请求 #7 完成，耗时: 0.621秒
+2025-06-24 22:50:26.363 | INFO     | __main__:performance_middleware:72 - 处理请求 #8: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250624225026_a018de4d.html
+2025-06-24 22:50:26.365 | INFO     | __main__:performance_middleware:91 - 请求 #8 完成，耗时: 0.002秒

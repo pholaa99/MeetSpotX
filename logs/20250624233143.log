@@ -1,0 +1,2 @@
+2025-06-24 23:31:45.322 | INFO     | web_server:performance_middleware:72 - 处理请求 #1: GET http://testserver/health
+2025-06-24 23:31:45.323 | INFO     | web_server:performance_middleware:91 - 请求 #1 完成，耗时: 0.001秒
