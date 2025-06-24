@@ -1,0 +1,47 @@
+2025-06-24 22:35:52.423 | INFO     | __main__:performance_middleware:72 - 处理请求 #1: GET http://127.0.0.1:8000/
+2025-06-24 22:35:52.424 | INFO     | __main__:performance_middleware:91 - 请求 #1 完成，耗时: 0.001秒
+2025-06-24 22:35:52.446 | INFO     | __main__:performance_middleware:72 - 处理请求 #2: GET http://127.0.0.1:8000/workspace/meetspot_finder.html
+2025-06-24 22:35:52.514 | INFO     | __main__:performance_middleware:91 - 请求 #2 完成，耗时: 0.068秒
+2025-06-24 22:36:05.896 | INFO     | __main__:performance_middleware:72 - 处理请求 #3: GET http://127.0.0.1:8000/?id=ffad49ff-cb08-42fe-a773-4cd8ae398bf6&vscodeBrowserReqId=1750775765891
+2025-06-24 22:36:05.897 | INFO     | __main__:performance_middleware:91 - 请求 #3 完成，耗时: 0.001秒
+2025-06-24 22:36:59.770 | INFO     | __main__:performance_middleware:72 - 处理请求 #4: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:36:59.772 | INFO     | __main__:find_meetspot:314 - [req_1750775819772] API请求开始: locations=['北京大学', '清华大学'], keywords=咖啡馆 餐厅
+2025-06-24 22:37:00.312 | INFO     | __main__:find_meetspot:371 - [req_1750775819772] API请求完成，耗时: 0.54秒
+2025-06-24 22:37:00.312 | INFO     | __main__:performance_middleware:91 - 请求 #4 完成，耗时: 0.543秒
+2025-06-24 22:37:00.369 | INFO     | __main__:performance_middleware:72 - 处理请求 #5: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250624223700_4e7273d9.html
+2025-06-24 22:37:00.371 | INFO     | __main__:performance_middleware:91 - 请求 #5 完成，耗时: 0.002秒
+2025-06-24 22:41:04.455 | INFO     | __main__:performance_middleware:72 - 处理请求 #6: HEAD http://127.0.0.1:8000/
+2025-06-24 22:41:04.456 | INFO     | __main__:performance_middleware:91 - 请求 #6 完成，耗时: 0.001秒
+2025-06-24 22:41:12.552 | INFO     | __main__:performance_middleware:72 - 处理请求 #7: GET http://127.0.0.1:8000/
+2025-06-24 22:41:12.552 | INFO     | __main__:performance_middleware:91 - 请求 #7 完成，耗时: 0.000秒
+2025-06-24 22:41:12.563 | INFO     | __main__:performance_middleware:72 - 处理请求 #8: GET http://127.0.0.1:8000/workspace/meetspot_finder.html
+2025-06-24 22:41:12.564 | INFO     | __main__:performance_middleware:91 - 请求 #8 完成，耗时: 0.001秒
+2025-06-24 22:41:26.239 | INFO     | __main__:performance_middleware:72 - 处理请求 #9: GET http://127.0.0.1:8000/health
+2025-06-24 22:41:26.240 | INFO     | __main__:performance_middleware:91 - 请求 #9 完成，耗时: 0.000秒
+2025-06-24 22:41:26.742 | INFO     | __main__:performance_middleware:72 - 处理请求 #10: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:41:26.743 | INFO     | __main__:find_meetspot:314 - [req_1750776086743] API请求开始: locations=['北京大学', '清华大学'], keywords=咖啡馆
+2025-06-24 22:41:27.034 | INFO     | __main__:find_meetspot:371 - [req_1750776086743] API请求完成，耗时: 0.29秒
+2025-06-24 22:41:27.034 | INFO     | __main__:performance_middleware:91 - 请求 #10 完成，耗时: 0.292秒
+2025-06-24 22:41:27.537 | INFO     | __main__:performance_middleware:72 - 处理请求 #11: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:41:27.539 | INFO     | __main__:find_meetspot:314 - [req_1750776087538] API请求开始: locations=['北京大学', '清华大学', '中关村软件园', '五道口地铁站', '上地十街'], keywords=餐厅
+2025-06-24 22:41:27.784 | ERROR    | app.tool.meetspot_recommender:_geocode:431 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 上地十街
+2025-06-24 22:41:27.784 | WARNING  | __main__:find_meetspot:354 - [req_1750776087538] 无法生成HTML页面
+2025-06-24 22:41:27.785 | INFO     | __main__:performance_middleware:91 - 请求 #11 完成，耗时: 0.248秒
+2025-06-24 22:41:28.287 | INFO     | __main__:performance_middleware:72 - 处理请求 #12: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:41:28.288 | INFO     | __main__:find_meetspot:314 - [req_1750776088288] API请求开始: locations=['北京大学', '清华大学', '中关村'], keywords=咖啡馆 图书馆 书店
+2025-06-24 22:41:28.340 | ERROR    | app.tool.meetspot_recommender:_geocode:431 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 北京大学
+2025-06-24 22:41:28.340 | WARNING  | __main__:find_meetspot:354 - [req_1750776088288] 无法生成HTML页面
+2025-06-24 22:41:28.341 | INFO     | __main__:performance_middleware:91 - 请求 #12 完成，耗时: 0.054秒
+2025-06-24 22:41:28.843 | INFO     | __main__:performance_middleware:72 - 处理请求 #13: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:41:28.844 | INFO     | __main__:find_meetspot:314 - [req_1750776088844] API请求开始: locations=['北京大学', '清华大学', '中关村', '五道口', '上地', '西二旗', '回龙观', '天通苑', '望京', '三里屯'], keywords=商场
+2025-06-24 22:41:29.012 | ERROR    | app.tool.meetspot_recommender:_geocode:431 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 五道口
+2025-06-24 22:41:29.012 | WARNING  | __main__:find_meetspot:354 - [req_1750776088844] 无法生成HTML页面
+2025-06-24 22:41:29.012 | INFO     | __main__:performance_middleware:91 - 请求 #13 完成，耗时: 0.169秒
+2025-06-24 22:41:29.514 | INFO     | __main__:performance_middleware:72 - 处理请求 #14: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:41:29.515 | INFO     | __main__:find_meetspot:314 - [req_1750776089515] API请求开始: locations=['北京大学', '清华大学', '中关村', '五道口', '上地', '西二旗', '回龙观', '天通苑', '望京', '三里屯', '国贸'], keywords=咖啡馆
+2025-06-24 22:41:29.515 | INFO     | __main__:performance_middleware:91 - 请求 #14 完成，耗时: 0.001秒
+2025-06-24 22:41:30.018 | INFO     | __main__:performance_middleware:72 - 处理请求 #15: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-24 22:41:30.018 | INFO     | __main__:find_meetspot:314 - [req_1750776090018] API请求开始: locations=['北京大学'], keywords=咖啡馆
+2025-06-24 22:41:30.018 | INFO     | __main__:performance_middleware:91 - 请求 #15 完成，耗时: 0.001秒
+2025-06-24 22:41:30.520 | INFO     | __main__:performance_middleware:72 - 处理请求 #16: GET http://127.0.0.1:8000/api/stats
+2025-06-24 22:41:30.521 | INFO     | __main__:performance_middleware:91 - 请求 #16 完成，耗时: 0.000秒

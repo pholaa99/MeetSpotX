@@ -1,0 +1,3 @@
+2025-06-24 14:28:07.702 | ERROR    | app.tool.meetspot_recommender:_geocode:270 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 北京东城区王府井
+2025-06-24 14:28:07.758 | ERROR    | app.tool.meetspot_recommender:_geocode:270 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 北京海淀区
+2025-06-24 14:28:07.813 | ERROR    | app.tool.meetspot_recommender:_geocode:270 - 地理编码失败: CUQPS_HAS_EXCEEDED_THE_LIMIT, 地址: 北京朝阳区望京
