@@ -20,7 +20,7 @@
 
 
 <p align="center">
-  <a href="https://www.bilibili.com/video/BV1d1jMzrEUk/?vd_source=ac00554d8e1f118822ccd0405e3f6f15">
+  <a href="https://www.bilibili.com/video/BV1aUK7zNEvo/?share_source=copy_web&vd_source=61d55dd586af24fd07eb60c3dbed43fb">
     <strong>📹 点击查看项目演示视频</strong>
   </a>
 </p>
