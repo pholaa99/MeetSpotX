@@ -476,42 +476,42 @@ class CafeRecommender(BaseTool):
         </div>
     </div>
     <script type="text/javascript">
-        window.onload = function() {
-            // 初始化地图
-            var map = new AMap.Map('map', {
+        window.onload = function() {{
+            /* 初始化地图 */
+            var map = new AMap.Map('map', {{
                 zoom: 13,
                 center: [{center_point[0]:.6f}, {center_point[1]:.6f}]
-            });
-            // 添加标记点
+            }});
+            /* 添加标记点 */
             var markers = {json.dumps(all_markers)};
-            // 标记图标
-            var iconStyles = {
-                location: new AMap.Icon({
+            /* 标记图标 */
+            var iconStyles = {{
+                location: new AMap.Icon({{
                     size: new AMap.Size(25, 34),
                     image: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_b1.png',
                     imageSize: new AMap.Size(25, 34)
-                }),
-                meetspot: new AMap.Icon({
+                }}),
+                meetspot: new AMap.Icon({{
                     size: new AMap.Size(25, 34),
                     image: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_bs.png',
                     imageSize: new AMap.Size(25, 34)
-                }),
-                center: new AMap.Icon({
+                }}),
+                center: new AMap.Icon({{
                     size: new AMap.Size(25, 34),
                     image: 'https://webapi.amap.com/theme/v1.3/markers/n/mark_g.png',
                     imageSize: new AMap.Size(25, 34)
-                })
-            };
-            // 添加所有标记
-            markers.forEach(function(marker) {
-                var mapMarker = new AMap.Marker({
+                }})
+            }};
+            /* 添加所有标记 */
+            markers.forEach(function(marker) {{
+                var mapMarker = new AMap.Marker({{
                     position: marker.position,
                     title: marker.name,
                     icon: iconStyles[marker.icon]
-                });
+                }});
                 mapMarker.setMap(map);
-            });
-        }
+            }});
+        }}
     </script>
     <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=890047cfc3d50b238af0e319c4f09ce5"></script>
 </body>
