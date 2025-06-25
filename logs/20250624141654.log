@@ -1,2 +1,0 @@
-2025-06-24 14:17:03.638 | ERROR    | __main__:find_meetspot:210 - API处理错误: 'CafeRequest' object has no attribute 'min_rating'
-2025-06-24 14:17:14.483 | ERROR    | __main__:find_meetspot:210 - API处理错误: 'CafeRequest' object has no attribute 'min_rating'
