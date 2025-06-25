@@ -277,3 +277,6 @@ curl http://127.0.0.1:8000/health
 Made with ❤️ by [JasonRobertDestiny](https://github.com/JasonRobertDestiny)
 
 </div>
+
+
+[![Star History Chart](https://api.star-history.com/svg?repos=JasonRobertDestiny/MeetSpot&type=Date)](https://www.star-history.com/#JasonRobertDestiny/MeetSpot&Date)
