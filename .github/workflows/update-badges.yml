@@ -26,3 +26,14 @@ jobs:
           REPO_NAME="${{ github.repository }}"
           echo "Repository: $REPO_NAME"
           echo "Badge update completed"
+
+      - name: Check for changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet; then
+            echo "No changes to commit"
+          else
+            echo "Changes detected, ready for commit"
+          fi

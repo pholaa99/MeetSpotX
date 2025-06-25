@@ -33,7 +33,7 @@ jobs:
           PR_TITLE="${{ github.event.pull_request.title }}"
           echo "PR Title: $PR_TITLE"
           
-          if [[ $PR_TITLE == *"Bump"* ]] && [[ $PR_TITLE == *"patch"* || $PR_TITLE =~ [0-9]+\.[0-9]+\.[0-9]+ ]]; then
+          if [[ $PR_TITLE == *"Bump"* ]] && [[ $PR_TITLE == *"patch"* ]]; then
             echo "safe-update=true" >> $GITHUB_OUTPUT
           else
             echo "safe-update=false" >> $GITHUB_OUTPUT
