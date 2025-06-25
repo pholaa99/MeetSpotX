@@ -143,6 +143,6 @@ python -m pytest tests/ -v
 - ⭐ **Star**: 给项目点个星支持一下！
 - 🔗 **项目地址**: https://github.com/JasonRobertDestiny/MeetSpot
 - 📹 **演示视频**: https://www.bilibili.com/video/BV1d1jMzrEUk/
-- 🚀 **构建状态**: [![Build Status](https://github.com/JasonRobertDestiny/MeetSpot/workflows/CI%20Tests/badge.svg)](https://github.com/JasonRobertDestiny/MeetSpot/actions)
+- 🚀 **构建状态**: [![Build Status](https://github.com/JasonRobertDestiny/MeetSpot/actions/workflows/ci.yml/badge.svg)](https://github.com/JasonRobertDestiny/MeetSpot/actions)
 
 **标签**: `help wanted` `good first issue` `enhancement` `hacktoberfest` `python` `javascript` `fastapi`

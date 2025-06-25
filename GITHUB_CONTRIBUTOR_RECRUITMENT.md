@@ -272,7 +272,7 @@ Ready to make an impact? 选择一个任务，留言认领，让我们一起创�
 - 📦 **依赖**: FastAPI, aiohttp, pytest
 - 🧪 **测试覆盖率**: 85%+
 - 📈 **代码质量**: A级
-- 🚀 **构建状态**: [![Build Status](https://github.com/JasonRobertDestiny/MeetSpot/workflows/CI%20Tests/badge.svg)](https://github.com/JasonRobertDestiny/MeetSpot/actions)
+- 🚀 **构建状态**: [![Build Status](https://github.com/JasonRobertDestiny/MeetSpot/actions/workflows/ci.yml/badge.svg)](https://github.com/JasonRobertDestiny/MeetSpot/actions)
 
 ### 🔗 相关链接
 - 📖 [项目主页](https://github.com/JasonRobertDestiny/MeetSpot)
