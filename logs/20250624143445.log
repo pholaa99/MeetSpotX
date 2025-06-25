@@ -1,3 +1,0 @@
-2025-06-24 14:34:54.506 | ERROR    | __main__:find_meetspot:214 - API处理错误: CafeRecommender.execute() got an unexpected keyword argument 'min_rating'
-2025-06-24 14:40:14.389 | ERROR    | __main__:find_meetspot:214 - API处理错误: CafeRecommender.execute() got an unexpected keyword argument 'min_rating'
-2025-06-24 14:41:12.596 | ERROR    | __main__:find_meetspot:214 - API处理错误: CafeRecommender.execute() got an unexpected keyword argument 'min_rating'
