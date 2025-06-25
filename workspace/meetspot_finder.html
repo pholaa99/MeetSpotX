@@ -358,6 +358,265 @@
             background: #219a52;
         }
 
+        /* 场景主题颜色系统 */
+        :root {
+            --default-primary: #667eea;
+            --default-secondary: #764ba2;
+            --default-accent: #4a5de6;
+        }
+
+        /* 咖啡馆主题 - 温暖棕色 */
+        .theme-coffee {
+            --primary-color: #8B4513;
+            --secondary-color: #CD853F;
+            --accent-color: #D2691E;
+            --background-gradient: linear-gradient(135deg, #8B4513 0%, #CD853F 100%);
+            --card-accent: #F4A460;
+        }
+
+        /* 餐厅主题 - 美食橙红 */
+        .theme-restaurant {
+            --primary-color: #FF6B35;
+            --secondary-color: #FF8C42;
+            --accent-color: #F7931E;
+            --background-gradient: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+            --card-accent: #FFB347;
+        }
+
+        /* 图书馆主题 - 知识蓝 */
+        .theme-library {
+            --primary-color: #2E86AB;
+            --secondary-color: #A23B72;
+            --accent-color: #F18F01;
+            --background-gradient: linear-gradient(135deg, #2E86AB 0%, #A23B72 100%);
+            --card-accent: #4A90E2;
+        }
+
+        /* 商场主题 - 购物紫 */
+        .theme-shopping {
+            --primary-color: #9B59B6;
+            --secondary-color: #8E44AD;
+            --accent-color: #BB8FCE;
+            --background-gradient: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
+            --card-accent: #D7BDE2;
+        }
+
+        /* 公园主题 - 自然绿 */
+        .theme-park {
+            --primary-color: #27AE60;
+            --secondary-color: #2ECC71;
+            --accent-color: #58D68D;
+            --background-gradient: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
+            --card-accent: #7DCEA0;
+        }
+
+        /* 电影院主题 - 娱乐红 */
+        .theme-cinema {
+            --primary-color: #E74C3C;
+            --secondary-color: #C0392B;
+            --accent-color: #EC7063;
+            --background-gradient: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+            --card-accent: #F1948A;
+        }
+
+        /* 健身房主题 - 活力橙 */
+        .theme-gym {
+            --primary-color: #E67E22;
+            --secondary-color: #D35400;
+            --accent-color: #F39C12;
+            --background-gradient: linear-gradient(135deg, #E67E22 0%, #D35400 100%);
+            --card-accent: #F8C471;
+        }
+
+        /* KTV主题 - 音乐粉 */
+        .theme-ktv {
+            --primary-color: #FF1493;
+            --secondary-color: #FF69B4;
+            --accent-color: #FFB6C1;
+            --background-gradient: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
+            --card-accent: #FFCCCB;
+        }
+
+        /* 博物馆主题 - 文化金 */
+        .theme-museum {
+            --primary-color: #DAA520;
+            --secondary-color: #B8860B;
+            --accent-color: #FFD700;
+            --background-gradient: linear-gradient(135deg, #DAA520 0%, #B8860B 100%);
+            --card-accent: #F0E68C;
+        }
+
+        /* 景点主题 - 旅游青 */
+        .theme-attraction {
+            --primary-color: #17A2B8;
+            --secondary-color: #138496;
+            --accent-color: #20C997;
+            --background-gradient: linear-gradient(135deg, #17A2B8 0%, #138496 100%);
+            --card-accent: #7FDBDA;
+        }
+
+        /* 酒吧主题 - 夜晚蓝 */
+        .theme-bar {
+            --primary-color: #2C3E50;
+            --secondary-color: #34495E;
+            --accent-color: #5D6D7E;
+            --background-gradient: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            --card-accent: #85929E;
+        }        /* 自定义场景主题 - 渐变彩虹 */
+        .theme-custom {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #4a5de6;
+            --background-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --card-accent: #a8edea;
+        }
+
+        /* 动态主题应用 */
+        body {
+            background: var(--background-gradient, linear-gradient(135deg, #667eea 0%, #764ba2 100%));
+            transition: background 0.6s ease;
+        }
+
+        .place-type.selected {
+            border-color: var(--primary-color, #667eea);
+            background: var(--background-gradient, linear-gradient(135deg, #667eea, #764ba2));
+            color: white;
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .add-location-btn {
+            background: var(--background-gradient, linear-gradient(135deg, #667eea, #764ba2));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .add-location-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(var(--primary-color, 102), var(--primary-color, 126), var(--primary-color, 234), 0.3);
+        }
+
+        .location-input input:focus {
+            outline: none;
+            border-color: var(--primary-color, #667eea);
+            box-shadow: 0 0 0 3px rgba(var(--primary-color, 102), var(--primary-color, 126), var(--primary-color, 234), 0.1);
+        }
+
+        .location-input i {
+            color: var(--primary-color, #667eea);
+        }
+
+        .section h3 i {
+            color: var(--primary-color, #667eea);
+        }
+
+        .suggestion-tag {
+            background: var(--primary-color, #667eea);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .suggestion-tag:hover {
+            background: var(--secondary-color, #764ba2);
+            transform: translateY(-1px);
+        }
+
+        .submit-btn {
+            background: var(--background-gradient, linear-gradient(135deg, #667eea, #764ba2));
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(var(--primary-color, 102), var(--primary-color, 126), var(--primary-color, 234), 0.4);
+        }
+
+        /* 场景提示标签 */
+        .theme-indicator {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-color, #4a5de6);
+            border: 3px solid white;
+            animation: pulse 2s infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .place-type.selected .theme-indicator {
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(var(--accent-color, 74), var(--accent-color, 93), var(--accent-color, 230), 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(var(--accent-color, 74), var(--accent-color, 93), var(--accent-color, 230), 0); }
+            100% { box-shadow: 0 0 0 0 rgba(var(--accent-color, 74), var(--accent-color, 93), var(--accent-color, 230), 0); }
+        }        /* 主题切换动画 */
+        .theme-transition {
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 让更多元素响应主题变化 */
+        .filters select, .filters input {
+            border-color: var(--primary-color, #667eea);
+            transition: border-color 0.3s ease;
+        }
+
+        .filters select:focus, .filters input:focus {
+            border-color: var(--accent-color, #4a5de6);
+            box-shadow: 0 0 0 3px rgba(var(--primary-color, 102), var(--primary-color, 126), var(--primary-color, 234), 0.1);
+        }
+
+        textarea:focus {
+            border-color: var(--primary-color, #667eea) !important;
+            box-shadow: 0 0 0 3px rgba(var(--primary-color, 102), var(--primary-color, 126), var(--primary-color, 234), 0.1) !important;
+        }
+
+        /* 自定义关键词输入框样式 */
+        #customKeywords:focus {
+            border-color: var(--primary-color, #667eea);
+            box-shadow: 0 0 0 3px rgba(var(--primary-color, 102), var(--primary-color, 126), var(--primary-color, 234), 0.1);
+        }
+
+        /* 选择提示样式也跟随主题 */
+        .selection-hint.active {
+            color: var(--primary-color, #667eea);
+        }
+
+        .selection-hint.limit {
+            color: var(--accent-color, #4a5de6);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 15px;
@@ -412,66 +671,83 @@
 
                 <!-- 场所类型选择 -->
                 <div class="section">
-                    <h3><i class='bx bxs-store'></i>选择场景类型</h3>
-                    <div class="place-types">
-                        <div class="place-type" data-type="咖啡馆">
+                    <h3><i class='bx bxs-store'></i>选择场景类型</h3>                    <div class="place-types">
+                        <div class="place-type" data-type="咖啡馆" data-theme="coffee">
                             <i class='bx bxs-coffee-togo'></i>
                             <span>咖啡馆</span>
-                        </div>                        <div class="place-type" data-type="餐厅">
+                            <div class="theme-indicator"></div>
+                        </div>
+                        <div class="place-type" data-type="餐厅" data-theme="restaurant">
                             <i class='bx bx-food-menu'></i>
                             <span>餐厅</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="图书馆">
+                        <div class="place-type" data-type="图书馆" data-theme="library">
                             <i class='bx bxs-book'></i>
                             <span>图书馆</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="商场">
+                        <div class="place-type" data-type="商场" data-theme="shopping">
                             <i class='bx bxs-shopping-bag'></i>
                             <span>商场</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="公园">
+                        <div class="place-type" data-type="公园" data-theme="park">
                             <i class='bx bxs-tree'></i>
                             <span>公园</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="电影院">
+                        <div class="place-type" data-type="电影院" data-theme="cinema">
                             <i class='bx bxs-film'></i>
                             <span>电影院</span>
-                        </div>                        <div class="place-type" data-type="健身房">
+                            <div class="theme-indicator"></div>
+                        </div>
+                        <div class="place-type" data-type="健身房" data-theme="gym">
                             <i class='bx bx-body'></i>
                             <span>健身房</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="KTV">
+                        <div class="place-type" data-type="KTV" data-theme="ktv">
                             <i class='bx bxs-microphone'></i>
                             <span>KTV</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="博物馆">
+                        <div class="place-type" data-type="博物馆" data-theme="museum">
                             <i class='bx bxs-institution'></i>
                             <span>博物馆</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="景点">
+                        <div class="place-type" data-type="景点" data-theme="attraction">
                             <i class='bx bxs-landmark'></i>
                             <span>景点</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="购物中心">
+                        <div class="place-type" data-type="购物中心" data-theme="shopping">
                             <i class='bx bxs-shopping-bags'></i>
                             <span>购物中心</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="游戏厅">
+                        <div class="place-type" data-type="游戏厅" data-theme="ktv">
                             <i class='bx bxs-joystick'></i>
                             <span>游戏厅</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="书店">
+                        <div class="place-type" data-type="书店" data-theme="library">
                             <i class='bx bxs-book-open'></i>
                             <span>书店</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="酒吧">
+                        <div class="place-type" data-type="酒吧" data-theme="bar">
                             <i class='bx bxs-drink'></i>
                             <span>酒吧</span>
+                            <div class="theme-indicator"></div>
                         </div>
-                        <div class="place-type" data-type="茶楼">
+                        <div class="place-type" data-type="茶楼" data-theme="teahouse">
                             <i class='bx bxs-coffee-bean'></i>
                             <span>茶楼</span>
-                        </div>                    </div>
+                            <div class="theme-indicator"></div>
+                        </div>
+                    </div>
 
                     <div id="place-type-hint" class="selection-hint">
                         请选择您喜欢的场景类型（最多3个）
@@ -552,19 +828,21 @@
                 <p>正在为您寻找最佳会面点...</p>
             </div>
         </div>
-    </div>    <script>
-        let selectedPlaceTypes = new Set();
-        const MAX_PLACE_TYPES = 3; // 最多选择3个场景类型
-
-        // 场所类型选择
+    </div>    <script>        let selectedPlaceTypes = new Set();
+        let selectedThemeOrder = []; // 记录选择顺序
+        const MAX_PLACE_TYPES = 3; // 最多选择3个场景类型        // 场所类型选择
         document.querySelectorAll('.place-type').forEach(type => {
             type.addEventListener('click', function() {
                 const typeValue = this.getAttribute('data-type');
+                const themeValue = this.getAttribute('data-theme');
                 
                 if (this.classList.contains('selected')) {
                     this.classList.remove('selected');
                     selectedPlaceTypes.delete(typeValue);
+                    // 从选择顺序中移除
+                    selectedThemeOrder = selectedThemeOrder.filter(theme => theme !== themeValue);
                     updatePlaceTypeHint();
+                    updateTheme(); // 更新主题
                 } else {
                     if (selectedPlaceTypes.size >= MAX_PLACE_TYPES) {
                         alert(`最多只能选择${MAX_PLACE_TYPES}个场景类型，这样推荐结果更精准`);
@@ -572,12 +850,27 @@
                     }
                     this.classList.add('selected');
                     selectedPlaceTypes.add(typeValue);
+                    // 记录选择顺序
+                    if (themeValue && !selectedThemeOrder.includes(themeValue)) {
+                        selectedThemeOrder.push(themeValue);
+                    }
                     updatePlaceTypeHint();
+                    updateTheme(); // 更新主题
                 }
             });
-        });
-
-        // 更新场所类型选择提示
+        });        // 自定义关键词输入监听
+        document.getElementById('customKeywords').addEventListener('input', function() {
+            // 当输入自定义关键词时，清除选中的预设场景类型
+            if (this.value.trim()) {
+                document.querySelectorAll('.place-type.selected').forEach(type => {
+                    type.classList.remove('selected');
+                });
+                selectedPlaceTypes.clear();
+                selectedThemeOrder = []; // 清除选择顺序
+                updatePlaceTypeHint();
+            }
+            updateTheme(); // 更新主题
+        });// 更新场所类型选择提示
         function updatePlaceTypeHint() {
             const hintElement = document.getElementById('place-type-hint');
             if (!hintElement) return;
@@ -593,7 +886,46 @@
                 hintElement.textContent = `已选择${selectedPlaceTypes.size}个场景类型（已达上限）`;
                 hintElement.className = 'selection-hint limit';
             }
-        }        // 添加地点输入框
+        }        // 主题切换函数
+        function updateTheme() {
+            const body = document.body;
+            
+            // 清除所有现有主题类
+            const themeClasses = [
+                'theme-coffee', 'theme-restaurant', 'theme-library', 'theme-shopping',
+                'theme-park', 'theme-cinema', 'theme-gym', 'theme-ktv', 
+                'theme-museum', 'theme-attraction', 'theme-bar', 'theme-teahouse', 'theme-custom'
+            ];
+            themeClasses.forEach(cls => body.classList.remove(cls));
+            
+            // 检查是否有自定义关键词输入
+            const customKeywords = document.getElementById('customKeywords').value.trim();
+            
+            // 如果有选中的主题，使用第一个选择的主题（按选择顺序）
+            if (selectedThemeOrder.length > 0) {
+                const primaryTheme = selectedThemeOrder[0]; // 使用第一个选择的主题
+                
+                // 应用主题
+                body.classList.add(`theme-${primaryTheme}`);
+                
+                // 保存当前主题到localStorage，供推荐页面使用
+                localStorage.setItem('meetspot-current-theme', primaryTheme);
+                
+                console.log(`主题已切换为: theme-${primaryTheme}，基于首选场景（选择顺序: ${selectedThemeOrder.join(' -> ')}）`);
+            } else if (customKeywords) {
+                // 如果没有选中预设场景但有自定义关键词，使用自定义主题
+                body.classList.add('theme-custom');
+                localStorage.setItem('meetspot-current-theme', 'custom');
+                console.log('应用自定义主题，基于关键词:', customKeywords);
+            } else {
+                // 没有选中场景时，恢复默认主题
+                localStorage.removeItem('meetspot-current-theme');
+                console.log('已恢复默认主题');
+            }
+            
+            // 添加平滑过渡效果
+            body.style.transition = 'background 0.6s ease, color 0.3s ease';
+        }// 添加地点输入框
         function addLocation() {
             const container = document.getElementById('locationsContainer');
             const locationInputs = container.querySelectorAll('.location-input');
@@ -774,19 +1106,22 @@
             if (locations.length > 10) {
                 updateStatusDisplay('error', '最多支持10个地点，请减少地点数量');
                 return;
-            }
-
-            // 收集关键词
+            }            // 收集关键词
             let keywords = '';
+            let selectedTheme = ''; // 添加主题信息
             const customKeywords = document.getElementById('customKeywords').value.trim();
             
             if (customKeywords) {
                 keywords = customKeywords;
+                selectedTheme = 'custom'; // 自定义关键词使用自定义主题
             } else if (selectedPlaceTypes.size > 0) {
                 keywords = Array.from(selectedPlaceTypes).join(' ');
+                // 使用第一个选择的主题
+                selectedTheme = selectedThemeOrder.length > 0 ? selectedThemeOrder[0] : '';
             } else {
                 keywords = '咖啡馆'; // 默认值
-            }            // 收集过滤条件
+                selectedTheme = 'coffee'; // 默认主题
+            }// 收集过滤条件
             const minRating = parseFloat(document.getElementById('minRating').value) || 0;
             const maxDistance = parseInt(document.getElementById('maxDistance').value) || 10000;
             const priceRange = document.getElementById('priceRange').value || '';
@@ -798,8 +1133,7 @@
             updateStatusDisplay('loading', `正在为您推荐${keywords}，请稍候...`);
             try {
                 const startTime = Date.now();
-                
-                const response = await fetch('/api/find_meetspot', {
+                  const response = await fetch('/api/find_meetspot', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -807,7 +1141,8 @@
                     body: JSON.stringify({
                         locations: locations,
                         keywords: keywords,
-                        user_requirements: userRequirements
+                        user_requirements: userRequirements,
+                        theme: selectedTheme // 添加主题信息
                     })
                 });
 
