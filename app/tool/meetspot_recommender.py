@@ -163,8 +163,7 @@ class CafeRecommender(BaseTool):
             "theme_secondary": "#fdebd0",
             "theme_light": "#fef9e7",
             "theme_dark": "#4a2303",
-        },
-        "健身房": {
+        },        "健身房": {
             "topic": "健身汇",
             "icon_header": "bx-dumbbell",
             "icon_section": "bx-dumbbell",
@@ -178,6 +177,81 @@ class CafeRecommender(BaseTool):
             "theme_secondary": "#fdebd0",
             "theme_light": "#fef9e7",
             "theme_dark": "#4a2c03",
+        },
+        "KTV": {
+            "topic": "欢唱汇",
+            "icon_header": "bxs-microphone",
+            "icon_section": "bx-microphone",
+            "icon_card": "bxs-microphone",
+            "map_legend": "KTV",
+            "noun_singular": "KTV",
+            "noun_plural": "KTV",
+            "theme_primary": "#FF1493", # 音乐粉色系
+            "theme_primary_light": "#FF69B4",
+            "theme_primary_dark": "#DC143C",
+            "theme_secondary": "#FFB6C1",
+            "theme_light": "#FFF0F5",
+            "theme_dark": "#8B1538",
+        },
+        "博物馆": {
+            "topic": "博古汇",
+            "icon_header": "bxs-institution",
+            "icon_section": "bx-institution",
+            "icon_card": "bxs-institution",
+            "map_legend": "博物馆",
+            "noun_singular": "博物馆",
+            "noun_plural": "博物馆",
+            "theme_primary": "#DAA520", # 文化金色系
+            "theme_primary_light": "#FFD700",
+            "theme_primary_dark": "#B8860B",
+            "theme_secondary": "#F0E68C",
+            "theme_light": "#FFFACD",
+            "theme_dark": "#8B7355",
+        },
+        "景点": {
+            "topic": "游览汇",
+            "icon_header": "bxs-landmark",
+            "icon_section": "bx-landmark",
+            "icon_card": "bxs-landmark",
+            "map_legend": "景点",
+            "noun_singular": "景点",
+            "noun_plural": "景点",
+            "theme_primary": "#17A2B8", # 旅游青色系
+            "theme_primary_light": "#20C997",
+            "theme_primary_dark": "#138496",
+            "theme_secondary": "#7FDBDA",
+            "theme_light": "#E0F7FA",
+            "theme_dark": "#00695C",
+        },
+        "酒吧": {
+            "topic": "夜宴汇",
+            "icon_header": "bxs-drink",
+            "icon_section": "bx-drink",
+            "icon_card": "bxs-drink",
+            "map_legend": "酒吧",
+            "noun_singular": "酒吧",
+            "noun_plural": "酒吧",
+            "theme_primary": "#2C3E50", # 夜晚蓝色系
+            "theme_primary_light": "#5D6D7E",
+            "theme_primary_dark": "#1B2631",
+            "theme_secondary": "#85929E",
+            "theme_light": "#EBF5FB",
+            "theme_dark": "#17202A",
+        },
+        "茶楼": {
+            "topic": "茶韵汇",
+            "icon_header": "bxs-coffee-bean",
+            "icon_section": "bx-coffee-bean",
+            "icon_card": "bxs-coffee-bean",
+            "map_legend": "茶楼",
+            "noun_singular": "茶楼",
+            "noun_plural": "茶楼",
+            "theme_primary": "#52796F", # 茶香绿色系
+            "theme_primary_light": "#84A98C",
+            "theme_primary_dark": "#354F52",
+            "theme_secondary": "#CAD2C5",
+            "theme_light": "#F7F9F7",
+            "theme_dark": "#2F3E46",
         },
         "default": { # 默认主题颜色 (同咖啡馆)
             "topic": "会面点",
@@ -206,6 +280,7 @@ class CafeRecommender(BaseTool):
         keywords: str = "咖啡馆",
         place_type: str = "",
         user_requirements: str = "",
+        theme: str = "",  # 添加主题参数
     ) -> ToolResult:
         if hasattr(config._config, "amap") and hasattr(config._config.amap, "api_key"):
             self.api_key = config._config.amap.api_key
@@ -240,15 +315,13 @@ class CafeRecommender(BaseTool):
             keywords_list = [kw.strip() for kw in keywords.split() if kw.strip()]
             primary_keyword = keywords_list[0] if keywords_list else "咖啡馆"
             
-            searched_places = []
-            
-            # 如果有多个关键词，分别搜索并合并结果
+            searched_places = []            # 如果有多个关键词，使用并发搜索提高性能
             if len(keywords_list) > 1:
-                logger.info(f"多场景搜索: {keywords_list}")
-                all_places = []
+                logger.info(f"多场景并发搜索: {keywords_list}")
                 
-                for keyword in keywords_list:
-                    logger.info(f"搜索场景: '{keyword}'")
+                # 创建并发搜索任务
+                async def search_keyword(keyword):
+                    logger.info(f"开始搜索场景: '{keyword}'")
                     places = await self._search_pois(
                         f"{center_point[0]},{center_point[1]}",
                         keyword,
@@ -259,17 +332,37 @@ class CafeRecommender(BaseTool):
                         # 为每个场所添加来源标记
                         for place in places:
                             place['_source_keyword'] = keyword
-                        all_places.extend(places)
                         logger.info(f"'{keyword}' 找到 {len(places)} 个结果")
+                        return places
+                    else:
+                        logger.info(f"'{keyword}' 未找到结果")
+                        return []
                 
-                # 去重（基于场所名称和地址）
+                # 并发执行所有搜索
+                tasks = [search_keyword(keyword) for keyword in keywords_list]
+                results = await asyncio.gather(*tasks, return_exceptions=True)
+                
+                # 合并结果
+                all_places = []
+                for i, result in enumerate(results):
+                    if isinstance(result, Exception):
+                        logger.error(f"搜索 '{keywords_list[i]}' 时出错: {result}")
+                    elif result:
+                        all_places.extend(result)
+                  # 去重（基于场所名称和坐标位置，更宽松的去重策略）
                 seen = set()
+                unique_places = []
                 for place in all_places:
-                    identifier = f"{place.get('name', '')}_{place.get('address', '')}"
+                    # 使用名称和坐标进行去重，而不是地址（地址可能格式不同）
+                    location = place.get('location', '')
+                    name = place.get('name', '')
+                    identifier = f"{name}_{location}"
+                    
                     if identifier not in seen:
                         seen.add(identifier)
-                        searched_places.append(place)
+                        unique_places.append(place)
                 
+                searched_places = unique_places
                 logger.info(f"多场景搜索完成，去重后共 {len(searched_places)} 个结果")
             else:
                 # 单个关键词的传统搜索
@@ -298,7 +391,8 @@ class CafeRecommender(BaseTool):
                 recommended_places,
                 center_point,
                 user_requirements,
-                keywords 
+                keywords,
+                theme  # 添加主题参数
             )
             result_text = self._format_result_text(location_info, recommended_places, html_path, keywords) 
             return ToolResult(output=result_text)
@@ -420,7 +514,32 @@ class CafeRecommender(BaseTool):
             place["_score"] = score
         
         ranked_places = sorted(places, key=lambda x: x.get("_score", 0), reverse=True)
-        return ranked_places[:5]
+        
+        # 对于多场景搜索，确保每个场景都有代表性
+        if any(place.get('_source_keyword') for place in ranked_places):
+            logger.info("应用多场景平衡策略")
+            # 按场景类型分组
+            by_keyword = {}
+            for place in ranked_places:
+                keyword = place.get('_source_keyword', '未知')
+                if keyword not in by_keyword:
+                    by_keyword[keyword] = []
+                by_keyword[keyword].append(place)
+            
+            # 从每个场景选择最佳的场所，确保多样性
+            balanced_places = []
+            max_per_keyword = max(2, 8 // len(by_keyword))  # 每个场景至少2个，总共不超过8个
+            
+            for keyword, keyword_places in by_keyword.items():
+                selected = keyword_places[:max_per_keyword]
+                balanced_places.extend(selected)
+                logger.info(f"从场景 '{keyword}' 选择了 {len(selected)} 个场所")
+            
+            # 按分数重新排序，但保持场景多样性
+            balanced_places = sorted(balanced_places, key=lambda x: x.get("_score", 0), reverse=True)
+            return balanced_places[:8]  # 增加到8个推荐
+        else:
+            return ranked_places[:5]
 
 
     def _calculate_distance(
@@ -440,11 +559,12 @@ class CafeRecommender(BaseTool):
         places: List[Dict], 
         center_point: Tuple[float, float],
         user_requirements: str,
-        keywords: str 
+        keywords: str,
+        theme: str = ""  # 添加主题参数
     ) -> str:
         file_name_prefix = "place"
         
-        html_content = self._generate_html_content(locations, places, center_point, user_requirements, keywords)
+        html_content = self._generate_html_content(locations, places, center_point, user_requirements, keywords, theme)
         timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
         unique_id = str(uuid.uuid4())[:8]
         file_name = f"{file_name_prefix}_recommendation_{timestamp}_{unique_id}.html"
@@ -455,7 +575,7 @@ class CafeRecommender(BaseTool):
 
         async with aiofiles.open(file_path, 'w', encoding='utf-8') as f:
             await f.write(html_content)
-        return file_path 
+        return file_path
 
     def _generate_html_content(
         self,
@@ -463,10 +583,33 @@ class CafeRecommender(BaseTool):
         places: List[Dict], 
         center_point: Tuple[float, float],
         user_requirements: str,
-        keywords: str 
+        keywords: str,        theme: str = ""  # 添加主题参数
     ) -> str:
-        primary_keyword = keywords.split("、")[0] if keywords else "场所"
-        cfg = self._get_place_config(primary_keyword)
+        # 根据主题参数确定配置
+        if theme:
+            # 主题映射：前端theme -> 后端配置key
+            theme_mapping = {
+                'coffee': '咖啡馆',
+                'restaurant': '餐厅', 
+                'library': '图书馆',
+                'shopping': '商场',
+                'park': '公园',
+                'cinema': '电影院',
+                'gym': '健身房',
+                'ktv': 'KTV',
+                'museum': '博物馆',
+                'attraction': '景点',
+                'bar': '酒吧',
+                'teahouse': '茶楼',
+                'custom': 'default'
+            }
+            config_key = theme_mapping.get(theme, 'default')
+            cfg = self._get_place_config(config_key)
+            primary_keyword = config_key if config_key != 'default' else '场所'
+        else:
+            # 兼容旧逻辑：从关键词确定配置
+            primary_keyword = keywords.split("、")[0] if keywords else "场所"
+            cfg = self._get_place_config(primary_keyword)
 
         search_process_html = self._generate_search_process(locations, center_point, user_requirements, keywords) 
 

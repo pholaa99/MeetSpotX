@@ -59,6 +59,7 @@ class CafeRequest(BaseModel):
     locations: List[str]
     keywords: str = "咖啡馆"
     user_requirements: str = ""
+    theme: str = ""  # 添加主题参数
 
 # 性能监控中间件
 @app.middleware("http")
@@ -327,14 +328,13 @@ async def find_meetspot(request: CafeRequest):
             )
         
         # 创建推荐器实例
-        recommender = CafeRecommender()
-
-        # 执行推荐，设置超时
+        recommender = CafeRecommender()        # 执行推荐，设置超时
         result = await asyncio.wait_for(
             recommender.execute(
                 locations=request.locations,
                 keywords=request.keywords,
-                user_requirements=request.user_requirements
+                user_requirements=request.user_requirements,
+                theme=request.theme  # 传递主题参数
             ),
             timeout=60.0  # 1分钟超时
         )
