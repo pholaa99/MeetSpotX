@@ -4,6 +4,7 @@ from typing import Dict, List, Optional, Union
 import tiktoken
 from openai import (APIError, AsyncAzureOpenAI, AsyncOpenAI,
                     AuthenticationError, OpenAIError, RateLimitError)
+from openai.types.chat import ChatCompletion
 from openai.types.chat.chat_completion_message import ChatCompletionMessage
 from tenacity import (retry, retry_if_exception_type, stop_after_attempt,
                       wait_random_exponential)

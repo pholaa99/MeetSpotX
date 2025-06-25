@@ -4,7 +4,7 @@
 
 **MeetSpot 聚点** 是一个智能会面点推荐系统，帮助用户根据多个参与者的位置快速找到最合适的会面场所。项目已有完整的基础架构，现在寻找更多开发者一起完善和扩展功能！
 
-🎥 **项目演示**: [点击观看](https://www.bilibili.com/video/BV1d1jMzrEUk/?vd_source=ac00554d8e1f118822ccd0405e3f6f15)
+🎥 **项目演示**: [点击观看](https://www.bilibili.com/video/BV1aUK7zNEvo/)
 
 ## 🎯 为什么参与 MeetSpot？
 
@@ -200,7 +200,7 @@ MeetSpot 不仅是一个项目，更是一个学习和成长的社区。无论�
 ---
 
 **项目地址**: https://github.com/JasonRobertDestiny/MeetSpot  
-**项目演示**: https://www.bilibili.com/video/BV1d1jMzrEUk/  
+**项目演示**: https://www.bilibili.com/video/BV1aUK7zNEvo/  
 **联系邮箱**: Johnrobertdestiny@gmail.com
 
 #开源项目 #Python #FastAPI #JavaScript #地图API #智能推荐 #寻找贡献者

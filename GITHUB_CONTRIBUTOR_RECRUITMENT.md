@@ -4,7 +4,7 @@
 
 **MeetSpot 聚点** 是一个智能会面点推荐系统，帮助用户根据多个参与者的位置智能推荐最佳会面场所。项目已经具备完整的基础架构和功能，现在寻找更多有才华的开发者一起完善和扩展！
 
-🎥 **[观看项目演示视频](https://www.bilibili.com/video/BV1d1jMzrEUk/)**  
+🎥 **[观看项目演示视频](https://www.bilibili.com/video/BV1aUK7zNEvo/)**  
 📖 **[查看完整文档](https://github.com/JasonRobertDestiny/MeetSpot/blob/main/README.md)**  
 🔧 **[开发者指南](https://github.com/JasonRobertDestiny/MeetSpot/blob/main/CONTRIBUTING.md)**
 
@@ -276,7 +276,7 @@ Ready to make an impact? 选择一个任务，留言认领，让我们一起创�
 
 ### 🔗 相关链接
 - 📖 [项目主页](https://github.com/JasonRobertDestiny/MeetSpot)
-- 📹 [演示视频](https://www.bilibili.com/video/BV1d1jMzrEUk/)
+- 📹 [演示视频](https://www.bilibili.com/video/BV1aUK7zNEvo/)
 - 📋 [开发指南](https://github.com/JasonRobertDestiny/MeetSpot/blob/main/CONTRIBUTING.md)
 - 🐛 [问题反馈](https://github.com/JasonRobertDestiny/MeetSpot/issues)
 - 💌 [联系邮箱](mailto:Johnrobertdestiny@gmail.com)

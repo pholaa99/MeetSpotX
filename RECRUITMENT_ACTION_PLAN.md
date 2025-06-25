@@ -107,7 +107,7 @@ MeetSpot 是一个智能会面点推荐系统，帮助用户根据多个参与�
 无论你是刚入门的新手还是资深的开发者，都能在这里找到适合的贡献方式！
 
 项目地址：https://github.com/JasonRobertDestiny/MeetSpot
-演示视频：https://www.bilibili.com/video/BV1d1jMzrEUk/
+演示视频：https://www.bilibili.com/video/BV1aUK7zNEvo/
 ```
 
 ## 🎯 目标用户画像

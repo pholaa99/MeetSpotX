@@ -1,0 +1,78 @@
+2025-06-25 10:15:38.131 | INFO     | __main__:performance_middleware:72 - 处理请求 #1: GET http://127.0.0.1:8000/
+2025-06-25 10:15:38.132 | INFO     | __main__:performance_middleware:91 - 请求 #1 完成，耗时: 0.001秒
+2025-06-25 10:15:38.145 | INFO     | __main__:performance_middleware:72 - 处理请求 #2: GET http://127.0.0.1:8000/workspace/meetspot_finder.html
+2025-06-25 10:15:38.209 | INFO     | __main__:performance_middleware:91 - 请求 #2 完成，耗时: 0.064秒
+2025-06-25 10:15:39.731 | INFO     | __main__:performance_middleware:72 - 处理请求 #3: GET http://127.0.0.1:8000/favicon.ico
+2025-06-25 10:15:39.732 | INFO     | __main__:performance_middleware:91 - 请求 #3 完成，耗时: 0.001秒
+2025-06-25 10:16:20.621 | INFO     | __main__:performance_middleware:72 - 处理请求 #4: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-25 10:16:20.623 | INFO     | __main__:find_meetspot:314 - [req_1750817780623] API请求开始: locations=['北京大学', '清华大学', '北京中关村'], keywords=购物中心
+2025-06-25 10:16:21.296 | INFO     | __main__:find_meetspot:371 - [req_1750817780623] API请求完成，耗时: 0.67秒
+2025-06-25 10:16:21.296 | INFO     | __main__:performance_middleware:91 - 请求 #4 完成，耗时: 0.675秒
+2025-06-25 10:16:21.327 | INFO     | __main__:performance_middleware:72 - 处理请求 #5: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250625101621_384d31ba.html
+2025-06-25 10:16:21.329 | INFO     | __main__:performance_middleware:91 - 请求 #5 完成，耗时: 0.002秒
+2025-06-25 10:16:41.411 | INFO     | __main__:performance_middleware:72 - 处理请求 #6: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-25 10:16:41.412 | INFO     | __main__:find_meetspot:314 - [req_1750817801412] API请求开始: locations=['北京大学', 'Canada'], keywords=公园
+2025-06-25 10:16:41.802 | INFO     | __main__:find_meetspot:371 - [req_1750817801412] API请求完成，耗时: 0.39秒
+2025-06-25 10:16:41.802 | INFO     | __main__:performance_middleware:91 - 请求 #6 完成，耗时: 0.391秒
+2025-06-25 10:16:41.834 | INFO     | __main__:performance_middleware:72 - 处理请求 #7: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250625101641_bf2a2be3.html
+2025-06-25 10:16:41.836 | INFO     | __main__:performance_middleware:91 - 请求 #7 完成，耗时: 0.002秒
+2025-06-25 10:16:47.740 | INFO     | __main__:performance_middleware:72 - 处理请求 #8: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-25 10:16:47.741 | INFO     | __main__:find_meetspot:314 - [req_1750817807741] API请求开始: locations=['北京大学', '清华大学', '北京中关村'], keywords=购物中心 电影院
+2025-06-25 10:16:47.932 | INFO     | app.tool.meetspot_recommender:execute:247 - 多场景搜索: ['购物中心', '电影院']
+2025-06-25 10:16:47.932 | INFO     | app.tool.meetspot_recommender:execute:251 - 搜索场景: '购物中心'
+2025-06-25 10:16:48.124 | INFO     | app.tool.meetspot_recommender:execute:263 - '购物中心' 找到 11 个结果
+2025-06-25 10:16:48.124 | INFO     | app.tool.meetspot_recommender:execute:251 - 搜索场景: '电影院'
+2025-06-25 10:16:48.264 | INFO     | app.tool.meetspot_recommender:execute:263 - '电影院' 找到 20 个结果
+2025-06-25 10:16:48.264 | INFO     | app.tool.meetspot_recommender:execute:273 - 多场景搜索完成，去重后共 30 个结果
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 中关村科贸电子城 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 融科资讯中心商业 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 中关村广场购物中心D区 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 中关村大融城(西区) 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 京颐商场 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 北京中关村领展广场 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 新中关购物中心B座 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 新中关购物中心 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 新中关购物中心A座 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 中关村大融城(东区)(装修中) 匹配场景 '购物中心'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 太平洋影城(中关村店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 金逸国际影城(中关村店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 完美世界影城(五道口购物中心) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 橙天嘉禾影城(万柳店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.265 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 华联影城(万柳北京华联BHG Mall店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 电影院(华宇时尚购物中心店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 中影华宇国际影城 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 海淀工人文化宫影剧院 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 嘉华国际影城(学清路店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 电影园 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 星典影城(魏公村芳华里店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 华联院线(上地店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 完美世界影城(京果商厦店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 英嘉国际影城(金源店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 CGV影城(北京清河万象汇店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 星聚汇 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 华夏电影 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 深影国际影城(学院南路店) 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 华联影城 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.266 | DEBUG    | app.tool.meetspot_recommender:_rank_places:409 - 场所 BHG影院 匹配场景 '电影院'，获得奖励分数
+2025-06-25 10:16:48.268 | INFO     | __main__:find_meetspot:371 - [req_1750817807741] API请求完成，耗时: 0.53秒
+2025-06-25 10:16:48.269 | INFO     | __main__:performance_middleware:91 - 请求 #8 完成，耗时: 0.528秒
+2025-06-25 10:16:48.300 | INFO     | __main__:performance_middleware:72 - 处理请求 #9: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250625101648_ef525ef6.html
+2025-06-25 10:16:48.302 | INFO     | __main__:performance_middleware:91 - 请求 #9 完成，耗时: 0.002秒
+2025-06-25 10:17:13.429 | INFO     | __main__:performance_middleware:72 - 处理请求 #10: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-25 10:17:13.430 | INFO     | __main__:find_meetspot:314 - [req_1750817833430] API请求开始: locations=['北京大学', 'Canada'], keywords=游戏厅
+2025-06-25 10:17:13.724 | INFO     | __main__:find_meetspot:371 - [req_1750817833430] API请求完成，耗时: 0.29秒
+2025-06-25 10:17:13.724 | INFO     | __main__:performance_middleware:91 - 请求 #10 完成，耗时: 0.295秒
+2025-06-25 10:17:13.759 | INFO     | __main__:performance_middleware:72 - 处理请求 #11: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250625101713_48ad3d0e.html
+2025-06-25 10:17:13.761 | INFO     | __main__:performance_middleware:91 - 请求 #11 完成，耗时: 0.002秒
+2025-06-25 10:17:18.888 | INFO     | __main__:performance_middleware:72 - 处理请求 #12: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-25 10:17:18.889 | INFO     | __main__:find_meetspot:314 - [req_1750817838889] API请求开始: locations=['北京大学', 'Canada'], keywords=酒吧
+2025-06-25 10:17:19.194 | INFO     | __main__:find_meetspot:371 - [req_1750817838889] API请求完成，耗时: 0.30秒
+2025-06-25 10:17:19.194 | INFO     | __main__:performance_middleware:91 - 请求 #12 完成，耗时: 0.307秒
+2025-06-25 10:17:19.226 | INFO     | __main__:performance_middleware:72 - 处理请求 #13: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250625101719_407198fa.html
+2025-06-25 10:17:19.228 | INFO     | __main__:performance_middleware:91 - 请求 #13 完成，耗时: 0.002秒
+2025-06-25 10:17:22.225 | INFO     | __main__:performance_middleware:72 - 处理请求 #14: POST http://127.0.0.1:8000/api/find_meetspot
+2025-06-25 10:17:22.225 | INFO     | __main__:find_meetspot:314 - [req_1750817842225] API请求开始: locations=['北京大学', 'Canada'], keywords=书店
+2025-06-25 10:17:22.549 | INFO     | __main__:find_meetspot:371 - [req_1750817842225] API请求完成，耗时: 0.32秒
+2025-06-25 10:17:22.550 | INFO     | __main__:performance_middleware:91 - 请求 #14 完成，耗时: 0.325秒
+2025-06-25 10:17:22.575 | INFO     | __main__:performance_middleware:72 - 处理请求 #15: GET http://127.0.0.1:8000/workspace/js_src/place_recommendation_20250625101722_acc0c382.html
+2025-06-25 10:17:22.577 | INFO     | __main__:performance_middleware:91 - 请求 #15 完成，耗时: 0.002秒

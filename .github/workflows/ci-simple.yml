@@ -1,3 +1,4 @@
+# CI Pipeline for MeetSpot
 name: CI Pipeline
 
 on:
@@ -29,7 +30,7 @@ jobs:
 
     - name: Test application import
       run: |
-        python -c "import app; print('App imports successfully')"
+        python -c "import app; print('✅ App imports successfully')"
 
     - name: Check code style
       run: |
