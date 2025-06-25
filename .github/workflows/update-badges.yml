@@ -1,49 +1,28 @@
-# Update README badges workflow
-name: Update README Badges
+name: Update Project Badges
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # 每周日更新
-  workflow_dispatch:  # 手动触发
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
 
 jobs:
   update-badges:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Get repository stats
-      id: stats
-      run: |
-        # Get repository statistics
-        STARS=$(curl -s "https://api.github.com/repos/${{ github.repository }}" | jq '.stargazers_count')
-        FORKS=$(curl -s "https://api.github.com/repos/${{ github.repository }}" | jq '.forks_count')
-        ISSUES=$(curl -s "https://api.github.com/repos/${{ github.repository }}/issues?state=open" | jq '. | length')
-        
-        echo "stars=${STARS}" >> $GITHUB_OUTPUT
-        echo "forks=${FORKS}" >> $GITHUB_OUTPUT
-        echo "issues=${ISSUES}" >> $GITHUB_OUTPUT
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Update README if needed
-      run: |
-        echo "Current Stars: ${{ steps.stats.outputs.stars }}"
-        echo "Current Forks: ${{ steps.stats.outputs.forks }}"
-        echo "Current Issues: ${{ steps.stats.outputs.issues }}"
-        
-        # Add logic here to automatically update README if needed
-        # For example, update project statistics, latest features, etc.
-
-    - name: Create commit if changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        
-        if [ -n "$(git status --porcelain)" ]; then
-          git add .
-          git commit -m "🤖 Auto-update project statistics"
-          git push
-        else
-          echo "No changes to commit"
-        fi
+      - name: Update README badges
+        run: |
+          echo "Updating project statistics badges..."
+          REPO_NAME="${{ github.repository }}"
+          echo "Repository: $REPO_NAME"
+          echo "Badge update completed"

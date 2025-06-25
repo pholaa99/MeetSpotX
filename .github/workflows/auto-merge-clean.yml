@@ -1,4 +1,3 @@
-# Auto-merge Dependabot PRs workflow
 name: Auto-merge Dependabot PRs
 
 on:
@@ -8,7 +7,6 @@ on:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    # Only run for Dependabot PRs
     if: github.actor == 'dependabot[bot]'
     
     steps:
@@ -27,8 +25,6 @@ jobs:
 
       - name: Run tests
         run: |
-          # Run tests if available
-          # python -m pytest tests/
           echo "Tests skipped - you can add them later"
 
       - name: Check PR type
@@ -37,7 +33,6 @@ jobs:
           PR_TITLE="${{ github.event.pull_request.title }}"
           echo "PR Title: $PR_TITLE"
           
-          # Check if it's a minor version update (relatively safe)
           if [[ $PR_TITLE == *"Bump"* ]] && [[ $PR_TITLE == *"patch"* || $PR_TITLE =~ [0-9]+\.[0-9]+\.[0-9]+ ]]; then
             echo "safe-update=true" >> $GITHUB_OUTPUT
           else
@@ -47,9 +42,8 @@ jobs:
       - name: Auto-merge safe updates
         if: steps.pr-type.outputs.safe-update == 'true'
         run: |
-          # Enable auto-merge
           gh pr merge --auto --squash "${{ github.event.pull_request.number }}" \
-            --subject "🤖 Auto-merge: ${{ github.event.pull_request.title }}" \
+            --subject "Auto-merge: ${{ github.event.pull_request.title }}" \
             --body "Automatically merged Dependabot dependency update"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -57,7 +51,6 @@ jobs:
       - name: Add review label
         if: steps.pr-type.outputs.safe-update == 'false'
         run: |
-          # For major version updates, add manual review label
           gh pr edit "${{ github.event.pull_request.number }}" \
             --add-label "needs-review,major-update"
         env:
@@ -65,6 +58,6 @@ jobs:
 
       - name: Notify PR status
         run: |
-          echo "✅ Dependabot PR processing completed"
+          echo "Dependabot PR processing completed"
           echo "PR Number: ${{ github.event.pull_request.number }}"
           echo "Safe Update: ${{ steps.pr-type.outputs.safe-update }}"
