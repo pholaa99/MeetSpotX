@@ -66,7 +66,7 @@
 
 MeetSpot 聚点 是一个智能会面点推荐系统，帮助用户根据多个参与者的位置智能推荐最佳会面场所。
 
-🎥 项目演示视频: https://www.bilibili.com/video/BV1d1jMzrEUk/
+🎥 项目演示视频: https://www.bilibili.com/video/BV1aUK7zNEvo/
 📖 项目地址: https://github.com/JasonRobertDestiny/MeetSpot
 
 ## 🎯 为什么加入我们？

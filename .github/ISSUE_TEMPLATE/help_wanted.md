@@ -10,7 +10,7 @@ assignees: 'JasonRobertDestiny'
 
 **MeetSpot 聚点** 是一个智能会面点推荐系统，帮助用户快速找到最适合的聚会地点。项目已有完整基础架构，现寻找更多开发者共同完善！
 
-🎥 **演示视频**: https://www.bilibili.com/video/BV1d1jMzrEUk/
+🎥 **演示视频**: https://www.bilibili.com/video/BV1aUK7zNEvo/
 📚 **项目文档**: 完整的 README、API 文档、贡献指南
 
 ## 💼 可选任务（按难度分级）

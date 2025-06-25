@@ -229,7 +229,7 @@ MeetSpot 智能会面点推荐系统已经完成了基础功能开发和开源�
 **邮箱**: Johnrobertdestiny@gmail.com  
 **GitHub**: https://github.com/JasonRobertDestiny  
 **项目地址**: https://github.com/JasonRobertDestiny/MeetSpot  
-**演示视频**: https://www.bilibili.com/video/BV1d1jMzrEUk/
+**演示视频**: https://www.bilibili.com/video/BV1aUK7zNEvo/
 
 ---
 
