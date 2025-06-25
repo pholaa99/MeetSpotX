@@ -270,13 +270,8 @@ curl http://127.0.0.1:8000/health
 
 ---
 
-<div align="center">
 
-**如果这个项目对您有帮助，请给它一个 ⭐ Star！**
 
-Made with ❤️ by [JasonRobertDestiny](https://github.com/JasonRobertDestiny)
-
-</div>
 
 
 [![Star History Chart](https://api.star-history.com/svg?repos=JasonRobertDestiny/MeetSpot&type=Date)](https://www.star-history.com/#JasonRobertDestiny/MeetSpot&Date)
