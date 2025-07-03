@@ -129,27 +129,76 @@ class Config:
         config_path = root / "config" / "config.toml"
         if config_path.exists():
             return config_path
-        example_path = root / "config" / "config.example.toml"
+        example_path = root / "config" / "config.toml.example"
         if example_path.exists():
             return example_path
-        raise FileNotFoundError("No configuration file found in config directory")
+        # 如果都没有找到，返回默认路径，让后续创建默认配置
+        return config_path
 
     def _load_config(self) -> dict:
-        config_path = self._get_config_path()
-        with config_path.open("rb") as f:
-            return tomllib.load(f)
+        try:
+            config_path = self._get_config_path()
+            if not config_path.exists():
+                # 创建默认配置
+                default_config = {
+                    "llm": {
+                        "model": "gpt-3.5-turbo",
+                        "api_key": "",
+                        "base_url": "",
+                        "max_tokens": 4096,
+                        "temperature": 1.0,
+                        "api_type": "",
+                        "api_version": ""
+                    },
+                    "amap": {
+                        "api_key": "",
+                        "security_js_code": ""
+                    },
+                    "log": {
+                        "level": "info",
+                        "file": "logs/meetspot.log"
+                    },
+                    "server": {
+                        "host": "0.0.0.0",
+                        "port": 8000
+                    }
+                }
+                return default_config
+            
+            with config_path.open("rb") as f:
+                return tomllib.load(f)
+        except Exception as e:
+            # 如果加载失败，返回默认配置
+            print(f"Failed to load config file, using defaults: {e}")
+            return {
+                "llm": {
+                    "model": "gpt-3.5-turbo",
+                    "api_key": "",
+                    "base_url": "",
+                    "max_tokens": 4096,
+                    "temperature": 1.0,
+                    "api_type": "",
+                    "api_version": ""
+                }
+            }
 
     def _load_initial_config(self):
         raw_config = self._load_config()
         base_llm = raw_config.get("llm", {})
+        
+        # 从环境变量读取敏感信息
+        import os
+        openai_api_key = os.getenv("OPENAI_API_KEY", "") or os.getenv("SILICON_API_KEY", "")
+        amap_api_key = os.getenv("AMAP_API_KEY", "")
+        
         llm_overrides = {
             k: v for k, v in raw_config.get("llm", {}).items() if isinstance(v, dict)
         }
 
         default_settings = {
-            "model": base_llm.get("model"),
-            "base_url": base_llm.get("base_url"),
-            "api_key": base_llm.get("api_key"),
+            "model": base_llm.get("model", "gpt-3.5-turbo"),
+            "base_url": base_llm.get("base_url", ""),
+            "api_key": openai_api_key,  # 从环境变量获取
             "max_tokens": base_llm.get("max_tokens", 4096),
             "max_input_tokens": base_llm.get("max_input_tokens"),
             "temperature": base_llm.get("temperature", 1.0),
