@@ -241,3 +241,5 @@ This project is open source under the MIT License - see [LICENSE](LICENSE) file 
 Made with ❤️ by [JasonRobertDestiny](https://github.com/JasonRobertDestiny)
 
 </div>
+
+[![Star History Chart](https://api.star-history.com/svg?repos=JasonRobertDestiny/MeetSpot&type=Date)](https://www.star-history.com/#JasonRobertDestiny/MeetSpot&Date)
