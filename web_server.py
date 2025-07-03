@@ -425,4 +425,12 @@ async def get_performance_stats():
 if __name__ == "__main__":
     # 启动Web服务器
     port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(app, host="127.0.0.1", port=port)
+    host = "0.0.0.0"  # 修改为支持云部署
+    uvicorn.run(app, host=host, port=port)
+
+# 为Vercel导出app - 这是Vercel需要的处理函数
+def handler(event, context):
+    return app
+
+# Vercel无服务器函数入口点
+app_vercel = app
