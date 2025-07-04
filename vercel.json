@@ -2,28 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/simple.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "src": "api/minimal.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/workspace/(.*)",
-      "dest": "/workspace/$1"
-    },
-    {
-      "src": "/docs/(.*)",
-      "dest": "/docs/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/api/simple.py"
+      "dest": "/api/minimal.py"
     }
-  ],
-  "env": {
-    "PYTHONPATH": "."
-  }
+  ]
 }
