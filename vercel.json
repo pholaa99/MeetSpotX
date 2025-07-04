@@ -4,16 +4,20 @@
     {
       "src": "api/index.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/workspace/(.*)",
-      "dest": "/workspace/$1"
+      "src": "/",
+      "dest": "/public/index.html"
     },
     {
-      "src": "/docs/(.*)", 
-      "dest": "/docs/$1"
+      "src": "/workspace/(.*)",
+      "dest": "/workspace/$1"
     },
     {
       "src": "/api/(.*)",
