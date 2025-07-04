@@ -180,8 +180,12 @@ async def internal_error_handler(request, exc):
     )
 
 # Vercel需要的应用实例
-application = app
+app_instance = app
 
-# 备用处理函数
-def handler(request, context=None):
+# 为Vercel导出的处理函数
+def handler(event, context):
+    """Vercel serverless function handler"""
     return app
+
+# 直接导出app供Vercel使用
+application = app

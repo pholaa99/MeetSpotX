@@ -18,9 +18,29 @@ from pydantic import BaseModel
 current_dir = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, current_dir)
 
-from app.agent.manus import Manus
-from app.logger import logger
-from app.tool.meetspot_recommender import CafeRecommender
+# 确保在 Vercel 环境下正确设置路径
+try:
+    from app.agent.manus import Manus
+    from app.logger import logger
+    from app.tool.meetspot_recommender import CafeRecommender
+    print("✅ Successfully imported all modules")
+except ImportError as e:
+    print(f"❌ Import error: {e}")
+    # 创建简化版本的必要类
+    class Manus:
+        async def run(self, user_query):
+            return f"查询处理中: {user_query} (简化模式)"
+    
+    class Logger:
+        def info(self, msg): print(f"INFO: {msg}")
+        def error(self, msg): print(f"ERROR: {msg}")
+    
+    class CafeRecommender:
+        def __init__(self): pass
+        def recommend(self, *args, **kwargs): return {"error": "Service unavailable"}
+    
+    logger = Logger()
+    print("⚠️ Running in fallback mode")
 
 app = FastAPI(
     title="OpenManus Web", 
@@ -37,8 +57,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# 挂载静态文件
-app.mount("/workspace", StaticFiles(directory="workspace"), name="workspace")
+# 挂载静态文件 - 适配 Vercel 环境
+try:
+    if os.path.exists("workspace"):
+        app.mount("/workspace", StaticFiles(directory="workspace"), name="workspace")
+        print("✅ Mounted /workspace static files")
+    else:
+        print("⚠️ workspace directory not found")
+        
+    if os.path.exists("docs"):
+        app.mount("/docs", StaticFiles(directory="docs"), name="docs")
+        print("✅ Mounted /docs static files")
+except Exception as e:
+    print(f"⚠️ Static files mount failed: {e}")
 
 # 创建工作目录
 os.makedirs("workspace/js_src", exist_ok=True)
