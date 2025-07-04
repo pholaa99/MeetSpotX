@@ -172,8 +172,16 @@ async def root(request: Request):
                 <p><a href="/api/status" style="color: #667eea;">/api/status</a> - API状态</p>
                 <p><a href="/docs" style="color: #667eea;">/docs</a> - API文档</p>
                 
-                <a href="/workspace/meetspot_finder.html" class="btn">开始使用完整版</a>
-                <a href="/api/find_meetspot" class="btn">API 接口</a>
+                <div style="margin: 30px 0;">
+                    <a href="/workspace/meetspot_finder.html" class="btn">🎯 使用完整版界面</a>
+                    <a href="/api/find_meetspot" class="btn">🔧 测试 API</a>
+                </div>
+                
+                <div style="margin-top: 30px; font-size: 14px; color: #666;">
+                    <p>✅ 当前版本：功能完整的 MeetSpot 应用</p>
+                    <p>🚀 部署平台：Vercel 无服务器环境</p>
+                    <p>📅 最后更新：2025年7月</p>
+                </div>
             </div>
         </body>
         </html>
