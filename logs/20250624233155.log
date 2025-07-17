@@ -1,2 +1,0 @@
-2025-06-24 23:32:05.985 | INFO     | __main__:performance_middleware:72 - 处理请求 #1: GET http://localhost:8000/health
-2025-06-24 23:32:05.986 | INFO     | __main__:performance_middleware:91 - 请求 #1 完成，耗时: 0.001秒

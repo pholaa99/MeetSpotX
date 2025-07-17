@@ -1,2 +1,0 @@
-2025-06-25 10:45:49.066 | INFO     | __main__:performance_middleware:73 - 处理请求 #1: GET http://127.0.0.1:8000/workspace/meetspot_finder.html?id=d11a3e2e-50fb-489c-8eb4-efe9ab570430&vscodeBrowserReqId=1750819549056
-2025-06-25 10:45:49.145 | INFO     | __main__:performance_middleware:92 - 请求 #1 完成，耗时: 0.079秒
