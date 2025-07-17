@@ -38,6 +38,20 @@ except ImportError as e:
     class CafeRecommender:
         def __init__(self): pass
         def recommend(self, *args, **kwargs): return {"error": "Service unavailable"}
+        
+        async def execute(self, *args, **kwargs):
+            # 尝试使用原始推荐器
+            try:
+                from app.tool.meetspot_recommender import CafeRecommender as OriginalRecommender
+                original = OriginalRecommender()
+                return await original.execute(*args, **kwargs)
+            except Exception as e:
+                print(f"原始推荐器失败: {e}")
+                # 回退到简单响应
+                class MockResult:
+                    def __init__(self):
+                        self.output = "服务暂时不可用，请稍后重试。\nHTML页面: fallback_result.html"
+                return MockResult()
     
     logger = Logger()
     print("⚠️ Running in fallback mode")
