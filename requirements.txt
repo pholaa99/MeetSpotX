@@ -12,3 +12,7 @@ aiohttp>=3.8.0
 
 # File processing
 toml>=0.10.0
+
+# Web3 & env
+web3>=6.0.0
+python-dotenv>=1.0.0

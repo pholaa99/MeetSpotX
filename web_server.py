@@ -3,8 +3,9 @@ import os
 import sys
 import time
 from pathlib import Path
-from typing import List
+from typing import List, Optional
 from urllib.parse import parse_qs, urlparse
+from functools import lru_cache
 
 import uvicorn
 from fastapi import FastAPI, Request, HTTPException, BackgroundTasks
@@ -13,6 +14,11 @@ from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse, JSON
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
+from web3 import Web3
+from dotenv import load_dotenv
+
+# 载入环境变量
+load_dotenv()
 
 # 添加当前目录到路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -106,6 +112,13 @@ class CafeRequest(BaseModel):
     user_requirements: str = ""
     theme: str = ""  # 添加主题参数
     wallet_address: str | None = None  # 新增：可选钱包地址
+
+# 简单内存存储（后续可替换到Redis/SQLite）
+SEARCH_COUNTER: dict[str, int] = {}
+LAST_CLAIM_TS: dict[str, float] = {}
+
+class ClaimBadgeRequest(BaseModel):
+    wallet_address: str
 
 # 性能监控中间件
 @app.middleware("http")
@@ -417,6 +430,10 @@ async def find_meetspot(request: CafeRequest):
         processing_time = time.time() - start_time
         logger.info(f"[{request_id}] API请求完成，耗时: {processing_time:.2f}秒")
         
+        # 搜索计数（用于后续领取徽章的条件）
+        if request.wallet_address:
+            SEARCH_COUNTER[request.wallet_address] = SEARCH_COUNTER.get(request.wallet_address, 0) + 1
+        
         # 返回结果，包含元数据
         return JSONResponse(
             content={
@@ -427,6 +444,7 @@ async def find_meetspot(request: CafeRequest):
                 "locations_count": len(request.locations),
                 "keywords": request.keywords,
                 "wallet_address": request.wallet_address,  # 透传钱包地址
+                "search_count": SEARCH_COUNTER.get(request.wallet_address, 0) if request.wallet_address else 0,
             },
             headers={
                 "X-Processing-Time": str(processing_time),
@@ -455,6 +473,44 @@ async def find_meetspot(request: CafeRequest):
             detail=f"服务器内部错误: {str(e)[:100]}..."  # 限制错误消息长度
         )
 
+# 链上徽章领取API
+@app.post("/api/claim_badge")
+async def claim_badge(body: ClaimBadgeRequest):
+    addr = (body.wallet_address or '').strip()
+    if not addr or not addr.startswith('0x') or len(addr) != 42:
+        raise HTTPException(status_code=400, detail="无效的钱包地址")
+
+    # 条件：至少完成一次搜索；60秒限频
+    if SEARCH_COUNTER.get(addr, 0) < 1:
+        raise HTTPException(status_code=400, detail="请先完成一次会面点搜索")
+    if time.time() - LAST_CLAIM_TS.get(addr, 0) < 60:
+        raise HTTPException(status_code=429, detail="领取过于频繁，请稍后再试")
+
+    w3_pack = _w3_pack()
+    if not w3_pack or not BADGE_ADDR:
+        raise HTTPException(status_code=500, detail="链上配置缺失，请联系维护者配置RPC/私钥/合约地址")
+    w3, relayer = w3_pack
+    if not relayer:
+        raise HTTPException(status_code=500, detail="未配置中继私钥")
+
+    try:
+        contract = w3.eth.contract(address=Web3.to_checksum_address(BADGE_ADDR), abi=BADGE_ABI)
+        nonce = w3.eth.get_transaction_count(relayer.address)
+        tx = contract.functions.mintBadge(Web3.to_checksum_address(addr)).build_transaction({
+            "from": relayer.address,
+            "nonce": nonce,
+            "gas": 200000,
+            "maxFeePerGas": w3.to_wei('20', 'gwei'),
+            "maxPriorityFeePerGas": w3.to_wei('2', 'gwei')
+        })
+        signed = relayer.sign_transaction(tx)
+        tx_hash = w3.eth.send_raw_transaction(signed.rawTransaction).hex()
+        LAST_CLAIM_TS[addr] = time.time()
+        return {"success": True, "tx_hash": tx_hash}
+    except Exception as e:
+        logger.error(f"claim_badge失败: {e}")
+        raise HTTPException(status_code=500, detail=f"领取失败: {str(e)[:100]}...")
+
 # 性能统计端点
 @app.get("/api/stats")
 async def get_performance_stats():
@@ -469,6 +525,24 @@ async def get_performance_stats():
             if time.time() - performance_stats["last_reset"] > 0 else 0
         )
     }
+
+# Web3 初始化（缓存）与合约配置
+@lru_cache
+def _w3_pack() -> Optional[tuple[Web3, Optional[object]]]:
+    rpc = os.getenv("RPC_URL", "").strip()
+    if not rpc:
+        return None
+    w3 = Web3(Web3.HTTPProvider(rpc, request_kwargs={"timeout": 30}))
+    pk = os.getenv("RELAYER_PRIVATE_KEY", "").strip()
+    acct = w3.eth.account.from_key(pk) if pk else None
+    return (w3, acct)
+
+BADGE_ADDR = os.getenv("BADGE_CONTRACT_ADDRESS", "").strip()
+BADGE_ABI = [
+    {"inputs":[{"internalType":"address","name":"to","type":"address"}],
+     "name":"mintBadge","outputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],
+     "stateMutability":"nonpayable","type":"function"}
+]
 
 if __name__ == "__main__":
     # 启动Web服务器
