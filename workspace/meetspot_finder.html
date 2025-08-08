@@ -8,6 +8,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- 引入 ethers.js（仅前端签名/连接钱包，不涉及私钥泄露） -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -645,6 +647,13 @@
         <div class="header">
             <h1><i class='bx bxs-map'></i> MeetSpot 聚点</h1>
             <p>智能会面点推荐系统 - 让每次聚会都找到完美地点</p>
+            <!-- 新增：钱包连接与地址展示 -->
+            <div style="margin-top:12px; display:flex; gap:8px; align-items:center; justify-content:center; flex-wrap:wrap;">
+                <button id="connectWalletBtn" type="button" class="add-location-btn" style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff;">
+                    <i class='bx bx-wallet'></i> 连接钱包
+                </button>
+                <span id="walletAddr" style="color:#fff; opacity:0.9;"></span>
+            </div>
         </div>
 
         <div class="form-card">
@@ -1209,6 +1218,46 @@
                 cafeType.click();
             }
         });
+        // 全局钱包地址（可为空）
+        window.__walletAddr = null;
+
+        async function connectWallet(){
+            try {
+                if (!window.ethereum) {
+                    alert('未检测到钱包，请在支持钱包的浏览器中打开或安装 MetaMask');
+                    return;
+                }
+                const provider = new ethers.BrowserProvider(window.ethereum);
+                const accounts = await provider.send('eth_requestAccounts', []);
+                window.__walletAddr = accounts[0];
+                const el = document.getElementById('walletAddr');
+                if (el) el.textContent = `已连接: ${window.__walletAddr.slice(0,6)}...${window.__walletAddr.slice(-4)}`;
+            } catch (e) {
+                console.error(e);
+                alert('连接钱包失败');
+            }
+        }
+        document.getElementById('connectWalletBtn')?.addEventListener('click', connectWallet);
+
+        // 修改提交逻辑：携带钱包地址（若已连接）
+        // 精确替换：在调用 fetch('/api/find_meetspot' ...) 的body中加入 wallet_address 字段
+        // 下方通过拦截 window.fetchBodyBuilder（若存在）或直接在原始提交位置追加字段
+        
+        // 针对当前页面已有的提交实现，覆写 fetch 体构造前的对象拼装逻辑：
+        // 通过代理方式在 JSON.stringify 前插入 wallet_address 字段（不影响原本逻辑）
+        (function(){
+            const origFetch = window.fetch;
+            window.fetch = function(input, init){
+                try{
+                    if (typeof input === 'string' && input.includes('/api/find_meetspot') && init && init.body){
+                        const b = JSON.parse(init.body);
+                        if (window.__walletAddr) b.wallet_address = window.__walletAddr;
+                        init.body = JSON.stringify(b);
+                    }
+                }catch(e){/* 忽略 */}
+                return origFetch.apply(this, arguments);
+            }
+        })();
     </script>
 </body>
 </html>
